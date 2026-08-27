@@ -6,7 +6,6 @@ import mu.nothingless.dto.request.LoginRequest;
 import mu.nothingless.dto.response.AccessTokenResponse;
 import mu.nothingless.dto.response.TokenPairResponse;
 import mu.nothingless.exception.BusinessException;
-import mu.nothingless.exception.TokenException;
 import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
 import mu.nothingless.utils.RetResult;
