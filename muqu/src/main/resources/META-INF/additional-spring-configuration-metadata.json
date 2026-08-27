@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "mybatis-plus.type-enums-package",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.type-enums-package'"
+  },
+  {
+    "name": "aes.algorithm",
+    "type": "java.lang.String",
+    "description": "A description for 'aes.algorithm'"
+  },
+  {
+    "name": "aes.algorithm",
+    "type": "java.lang.String",
+    "description": "A description for 'aes.algorithm'"
+  },
+  {
+    "name": "aes.transformation",
+    "type": "java.lang.String",
+    "description": "A description for 'aes.transformation'"
+  },
+  {
+    "name": "aes.key",
+    "type": "java.lang.String",
+    "description": "A description for 'aes.key'"
+  },
+  {
+    "name": "aes.aes-key-base64",
+    "type": "java.lang.String",
+    "description": "A description for 'aes.aes-key-base64'"
+  }
+]}

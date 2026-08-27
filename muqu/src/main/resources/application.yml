@@ -1,0 +1,130 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: muqu
+  profiles:
+    active: dev   # 或 prod
+  security:
+    user:
+      name: admin
+      password: admin123
+
+  data:
+    redis:
+      host: localhost
+      port: 5201
+      password: ysdww9520
+      database: 1
+      jedis:
+        pool:
+          enabled: true
+          max-active: 50
+          max-idle: 10
+          min-idle: 5
+      timeout: 5000
+      connect-timeout: 15000
+
+  datasource:
+    # === Druid 监控页面配置 ===
+    druid:
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin123
+        reset-enable: false
+        allow: 127.0.0.1
+      web-stat-filter:
+        enabled: true
+        session-stat-enable: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,/.well-known/*"
+      filters: stat,wall,slf4j
+
+    # === dynamic-datasource 配置 ===
+    dynamic:
+      primary: master
+      strict: false
+      type: com.alibaba.druid.pool.DruidDataSource
+      
+      # 全局 Druid 连接池配置
+      druid:
+        initial-size: 5
+        min-idle: 5
+        max-active: 20
+        max-wait: 30000
+        validation-query: SELECT 1
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+
+      datasource:
+        master:
+          url: jdbc:postgresql://localhost:5432/boot_db
+          username: postgres
+          password: ysdww9520
+          driver-class-name: org.postgresql.Driver
+        # 如需添加从库，取消下面注释
+        # slave:
+        #   url: jdbc:postgresql://localhost:5432/postgres_slave
+        #   username: postgres
+        #   password: ysdww9520
+        #   driver-class-name: org.postgresql.Driver
+
+
+jwt:
+  # 对称加密场景（默认）
+  secret: U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI
+  algorithm: HS512
+  
+  # 非对称加密场景（微服务 / 网关验签）
+  # algorithm: RS256
+  # private-key: "Base64私钥DER..."
+  # public-key: "Base64公钥DER..."
+
+  access-ttl: 1h
+  refresh-ttl: 7d
+
+  redis-check-enabled: true
+  access-token-store-enabled: true
+  single-device-login-enabled: false
+
+aes:
+  algorithm: AES/GCM/NoPadding
+  transformation: AES/GCM/NoPadding
+  key: ShengdeLoveSakuraiYukina_Forever
+  # U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI
+  aes-key-base64: ${AES_KEY_B64:U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI}
+
+
+logging:
+  file:
+    path: C:/Shengde/Repo/MQ/muqu/logs
+
+mybatis-plus:
+  configuration:
+    # 驼峰自动映射
+    map-underscore-to-camel-case: true
+    # 日志输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 默认枚举处理类型
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+  global-config:
+    db-config:
+      # 逻辑删除字段
+      logic-delete-field: deleted
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      # 主键类型
+      id-type: assign_id
+      # 表前缀（所有表都有统一前缀）
+      table-prefix: sys_
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: mu.nothingless.entity
+  type-handlers-package: mu.nothingless.handler
+  type-enums-package: mu.nothingless.enums
+

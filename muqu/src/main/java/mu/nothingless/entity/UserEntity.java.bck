@@ -1,0 +1,180 @@
+package mu.nothingless.entity;
+
+import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import mu.nothingless.enums.AccountStatus;
+import mu.nothingless.handler.AesTypeHandler;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+/**
+ * 系统用户实体
+ * <p>约束：
+ * <ul>
+ *   <li>敏感字段（passwordHash, phone）禁止出现在 toString 与 JSON 序列化中</li>
+ *   <li>雪花 ID 返回前端时转为 String，防止 JS 精度丢失</li>
+ *   <li>乐观锁、逻辑删除字段在数据库层有 DEFAULT 0 NOT NULL</li>
+ * </ul>
+ */
+@Getter
+@Setter
+@ToString(exclude = {"passwordHash", "phone"})
+@TableName(value = "sys_user", autoResultMap = true)
+public class UserEntity implements Serializable {
+
+    private static final long serialVersionUID = 20161712L;
+
+    @JsonSerialize(using = ToStringSerializer.class)
+    @TableId(type = IdType.ASSIGN_ID)
+    @TableField("tab_id")
+    private Long id;
+    // ==================== 核心字段 ====================
+    @NotBlank(message = "用户名不能为空")
+    @Size(max = 18, message = "用户名长度不能超过18")
+    @TableField("my_user_name")
+    private String username;
+
+    @Size(max = 20, message = "用户ID长度不能超过20")
+    @TableField("my_user_id")
+    private String userId;
+
+    @Email(message = "邮箱格式不正确")
+    @Size(max = 100, message = "邮箱过长")
+    @TableField("my_email")
+    private String myEmail;
+
+    /** 手机号：AES-GCM 加密存储，等值查询需配合 phoneIndex 盲索引列 */
+    @Size(max = 20, message = "手机号长度不能超过20")
+    @TableField(value = "my_phone", typeHandler = AesTypeHandler.class)
+    private String phone;
+
+    /** 手机号盲索引（HMAC-SHA256），用于唯一校验与等值查询 */
+    @NotBlank
+    @Size(max = 64, message = "索引长度异常")
+    @TableField("my_phone_index")
+    private String phoneIndex;
+
+    @TableField("my_employee_id")
+    private String employeeId;
+
+    // ==================== 姓名信息 ====================
+    @Size(max = 50, message = "名字长度不能超过50")
+    @TableField("first_name")
+    private String firstName;
+
+    @Size(max = 50, message = "姓氏长度不能超过50")
+    @TableField("last_name")
+    private String lastName;
+
+    @Size(max = 100, message = "全名长度不能超过100")
+    @TableField("full_name")
+    private String fullName;
+
+    // ==================== 安全字段 ====================
+    // 密码：仅插入时填充，更新时忽略，查询不返回
+    @TableField(value = "password_hash", insertStrategy = FieldStrategy.NOT_EMPTY, updateStrategy = FieldStrategy.NEVER, select = false)
+    private String passwordHash;
+
+    // mybatis-plus.type-enums-package = mu.nothingless.enums
+    @TableField("my_account_status")
+    private AccountStatus status;
+
+    @TableField("time_locked_until")
+    private LocalDateTime lockedUntil;
+
+    @TableField("time_password_expires_at")
+    private LocalDateTime passwordExpiresAt;
+
+    @TableField("failed_login_attempts")
+    private Integer failedLoginAttempts = 0;
+
+    // 角色集合：JSON 字段自动序列化
+    @TableField(value = "my_roles", typeHandler = JacksonTypeHandler.class)
+    private Set<String> myRoles = new HashSet<>();
+
+    @TableField(value = "my_profiles", typeHandler = JacksonTypeHandler.class)
+    private Set<String> myProfiles;
+
+    // ==================== 乐观锁 ====================
+    @Version
+    @TableField("my_version")
+    private Integer myVersion;
+
+    // ==================== 逻辑删除 ====================
+    @TableLogic(value = "0", delval = "1")
+    @TableField(value = "b_deleted", fill = FieldFill.INSERT)
+    private Integer deleted;
+
+    // ==================== 自动填充字段（审计） ====================
+    @TableField(value = "time_created_at", fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
+
+    @TableField(value = "time_updated_at", fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
+
+    @TableField(value = "who_created_by", fill = FieldFill.INSERT)
+    private String createdBy;
+
+    @TableField(value = "who_updated_by", fill = FieldFill.INSERT_UPDATE)
+    private String updatedBy;
+
+    // ==================== 租户字段 ====================
+    @TableField(value = "my_tenant_id", fill = FieldFill.INSERT)
+    private Long tenantId;
+
+    // ==================== 外键(自己关联) ====================
+    @TableField("my_key")
+    private String myKey;
+
+    // ==================== 备用键 ====================
+    @TableField("key_01")
+    private String myKey1;
+
+    @TableField("key_02")
+    private String myKey2;
+
+    @TableField("key_03")
+    private String myKey3;
+
+    @TableField("key_04")
+    private String myKey4;
+
+    @TableField("key_05")
+    private String myKey5;
+
+    @TableField("key_06")
+    private String myKey6;
+
+    public UserEntity() {
+        this.myVersion = 0;
+        this.failedLoginAttempts = 0;
+        this.deleted = 0;
+        this.myRoles = new HashSet<>();
+        this.myProfiles = new HashSet<>();
+    }
+
+    public Set<String> getRoles() {
+        if (myRoles == null) {
+            myRoles = new HashSet<>();
+        }
+        return myRoles;
+    }
+    public Set<String> getProfiles() {
+        if (myProfiles == null) {
+            myProfiles = new HashSet<>();
+        }
+        return myProfiles;
+    }
+
+}
