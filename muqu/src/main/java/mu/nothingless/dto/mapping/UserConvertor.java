@@ -34,7 +34,7 @@ public interface UserConvertor {
     @Mapping(target = "myVersion", ignore = true)            // 默认 0
     @Mapping(target = "failedAttempts", constant = "0")      // 新用户登录失败次数为 0
     @Mapping(target = "myRoles", expression = "java(copySet(request.getMyRoles()))")
-    @Mapping(target = "myProfiles", expression = "java(copySet(request.getMyProfiles()))")
+    @Mapping(target = "myProfiles", expression = "java(copyMap(request.getMyProfiles()))")
     UserEntity toEntity(UserCreateRequest request);
 
     // ========== DTO → Entity（更新，忽略 null） ==========
@@ -49,7 +49,7 @@ public interface UserConvertor {
     @Mapping(target = "myVersion", ignore = true)
     @Mapping(target = "tenantId", ignore = true)              // 租户不允许更新
     @Mapping(target = "myRoles", expression = "java(copySet(request.getMyRoles()))")
-    @Mapping(target = "myProfiles", expression = "java(copySet(request.getMyProfiles()))")
+    @Mapping(target = "myProfiles", expression = "java(copyMap(request.getMyProfiles()))")
     void updateEntityFromDto(UserUpdateRequest request, @MappingTarget UserEntity entity);
 
     // ========== Entity → Response ==========
@@ -61,5 +61,10 @@ public interface UserConvertor {
     
     default Set<String> copySet(Set<String> source) {
         return source == null ? new HashSet<>() : new HashSet<>(source);
+    }
+    
+    // ========== 深拷贝 Map（防止外部修改影响实体） ==========
+    default <K, V> java.util.Map<K, V> copyMap(java.util.Map<K, V> source) {
+        return source == null ? new java.util.HashMap<>() : new java.util.HashMap<>(source);
     }
 }

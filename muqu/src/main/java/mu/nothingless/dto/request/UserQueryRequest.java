@@ -11,7 +11,7 @@ import mu.nothingless.enums.AccountStatus;
 public class UserQueryRequest {
 
     @Size(max = 18, message = "用户名长度不能超过18")
-    private String username;
+    private String userAccount;
 
     @Size(max = 20, message = "用户ID长度不能超过20")
     private String userId;

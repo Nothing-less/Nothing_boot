@@ -7,6 +7,7 @@ import lombok.Data;
 import mu.nothingless.enums.AccountStatus;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -19,7 +20,7 @@ public class UserUpdateRequest {
     private Long id;
 
     @Size(max = 18, message = "用户名长度不能超过18")
-    private String username;
+    private String userAccount;
 
     @Size(max = 20, message = "用户ID长度不能超过20")
     private String userId;
@@ -56,7 +57,7 @@ public class UserUpdateRequest {
 
     private Set<String> myRoles;
 
-    private Set<String> myProfiles;
+    private Map<String, Object> myProfiles;
 
     private String myKey;
 

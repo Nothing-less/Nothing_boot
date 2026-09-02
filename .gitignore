@@ -1,0 +1,6 @@
+*.log.gz
+*.log
+muqu/logs/*.log
+*.bck
+muqu/logs/muqu.log
+muqu/logs/muqu-error.log

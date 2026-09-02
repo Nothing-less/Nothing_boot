@@ -16,13 +16,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final BcryptUtil bcrypt;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String userAccount) throws UsernameNotFoundException {
         // 示例：这里改成你从数据库查用户的逻辑
-        // UserEntity user = userMapper.findByUsername(username);
+        // UserEntity user = userMapper.findByUsername(userAccount);
         // if (user == null) throw new UsernameNotFoundException("用户不存在");
         
         // 临时写死用于测试，后续替换为数据库查询
-        if (!"admin".equals(username)) {
+        if (!"admin".equals(userAccount)) {
             throw new UsernameNotFoundException("用户不存在");
         }
         

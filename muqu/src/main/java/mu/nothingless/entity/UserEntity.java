@@ -7,10 +7,13 @@ import lombok.Setter;
 import lombok.ToString;
 import mu.nothingless.enums.AccountStatus;
 import mu.nothingless.handler.AesTypeHandler;
+import mu.nothingless.handler.PgJsonbTypeHandler;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
@@ -28,13 +31,12 @@ public class UserEntity implements Serializable {
     private static final long serialVersionUID = 20161712L;
 
     @JsonSerialize(using = ToStringSerializer.class)
-    @TableId(type = IdType.ASSIGN_ID)
-    @TableField("tab_id")
+    @TableId(value = "tab_id", type = IdType.ASSIGN_ID)
     private Long id;
 
     // ==================== 核心字段 ====================
-    @TableField("my_user_name")
-    private String username;
+    @TableField("my_user_account")
+    private String userAccount;
 
     @TableField("my_user_id")
     private String userId;
@@ -67,7 +69,7 @@ public class UserEntity implements Serializable {
     @TableField(value = "password_hash", insertStrategy = FieldStrategy.NOT_EMPTY, updateStrategy = FieldStrategy.NEVER, select = false)
     private String passwordHash;
 
-    @TableField("my_account_status")
+    @TableField(value = "my_account_status", typeHandler = mu.nothingless.handler.AccountStatusTypeHandler.class)
     private AccountStatus status;
 
     @TableField("time_locked_until")
@@ -80,11 +82,11 @@ public class UserEntity implements Serializable {
     private Integer failedAttempts;
 
     // 角色集合：JSON 字段自动序列化
-    @TableField(value = "my_roles", typeHandler = JacksonTypeHandler.class)
+    @TableField(value = "my_roles", typeHandler = PgJsonbTypeHandler.class)
     private Set<String> myRoles;
 
-    @TableField(value = "my_profiles", typeHandler = JacksonTypeHandler.class)
-    private Set<String> myProfiles;
+    @TableField(value = "my_profiles", typeHandler = PgJsonbTypeHandler.class)
+    private Map<String, Object> myProfiles;
 
     // ==================== 乐观锁 ====================
     @Version
@@ -141,7 +143,7 @@ public class UserEntity implements Serializable {
         this.failedAttempts = 0;
         this.deleted = 0;
         this.myRoles = new HashSet<>();
-        this.myProfiles = new HashSet<>();
+        this.myProfiles = new HashMap<>();
     }
 
     public Set<String> getRoles() {
@@ -151,9 +153,9 @@ public class UserEntity implements Serializable {
         return myRoles;
     }
 
-    public Set<String> getProfiles() {
+    public Map<String, Object> getProfiles() {
         if (myProfiles == null) {
-            myProfiles = new HashSet<>();
+            myProfiles = new HashMap<>();
         }
         return myProfiles;
     }

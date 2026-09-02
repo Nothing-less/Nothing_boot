@@ -6,6 +6,7 @@ import lombok.Data;
 import mu.nothingless.enums.AccountStatus;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public class UserResponse {
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
-    private String username;
+    private String userAccount;
     private String userId;
     private String myEmail;
     private String employeeId;
@@ -29,7 +30,7 @@ public class UserResponse {
     private LocalDateTime passwordExpiresAt;
     private Integer failedLoginAttempts;
     private Set<String> myRoles;
-    private Set<String> myProfiles;
+    private Map<String, Object> myProfiles;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String createdBy;

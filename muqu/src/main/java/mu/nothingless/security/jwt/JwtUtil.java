@@ -70,7 +70,7 @@ public class JwtUtil {
      * 生成全新的 Access + Refresh 令牌对。
      * 若开启单设备登录，会自动踢掉该用户所有旧令牌。
      */
-    public TokenPair generateToken(String userId, String username, Map<String, Object> extra) {
+    public TokenPair generateToken(String userId, String userAccount, Map<String, Object> extra) {
         if (props.isSingleDeviceLoginEnabled()) {
             tokenStore.clearUserTokens(userId);
             log.info("单设备登录模式：清理用户历史令牌 | userId={}", userId);
@@ -79,8 +79,8 @@ public class JwtUtil {
         String accessJti = UUID.randomUUID().toString();
         String refreshJti = UUID.randomUUID().toString();
 
-        String accessToken = buildToken(accessJti, userId, username, TokenType.ACCESS, extra);
-        String refreshToken = buildToken(refreshJti, userId, username, TokenType.REFRESH, null);
+        String accessToken = buildToken(accessJti, userId, userAccount, TokenType.ACCESS, extra);
+        String refreshToken = buildToken(refreshJti, userId, userAccount, TokenType.REFRESH, null);
 
         tokenStore.storeRefreshToken(userId, refreshJti, props.getRefreshTtl());
 
@@ -99,14 +99,14 @@ public class JwtUtil {
     public TokenPair refreshToken(String refreshToken) throws TokenException {
         Claims claims = parseRefreshToken(refreshToken);
         String userId = claims.getSubject();
-        String username = getUsername(claims);
+        String userAccount = getUserAccount(claims);
         String oldJti = claims.getId();
 
         // 旧 Refresh Token 立即作废
         tokenStore.removeRefreshToken(userId, oldJti);
         log.info("Refresh Token 旋转 | userId={} | oldJti={}", userId, oldJti);
 
-        return generateToken(userId, username, null);
+        return generateToken(userId, userAccount, null);
     }
 
     // ==================== 解析 Token ====================
@@ -192,8 +192,8 @@ public class JwtUtil {
         return claims.getSubject();
     }
 
-    public static String getUsername(Claims claims) {
-        return claims.get(TokenClaims.USERNAME, String.class);
+    public static String getUserAccount(Claims claims) {
+        return claims.get(TokenClaims.USER_ACCOUNT, String.class);
     }
 
     public static String getTokenId(Claims claims) {
@@ -206,7 +206,7 @@ public class JwtUtil {
 
     // ==================== 私有方法 ====================
 
-    private String buildToken(String jti, String userId, String username, TokenType type, Map<String, Object> extra) {
+    private String buildToken(String jti, String userId, String userAccount, TokenType type, Map<String, Object> extra) {
         Date now = new Date();
         Duration ttl = (type == TokenType.ACCESS) ? props.getAccessTtl() : props.getRefreshTtl();
         Date expiry = new Date(now.getTime() + ttl.toMillis());
@@ -214,7 +214,7 @@ public class JwtUtil {
         JwtBuilder builder = Jwts.builder()
                 .id(jti)
                 .subject(userId)
-                .claim(TokenClaims.USERNAME, username)
+                .claim(TokenClaims.USER_ACCOUNT, userAccount)
                 .claim(TokenClaims.TYPE, type.name())
                 .issuedAt(now)
                 .notBefore(now)

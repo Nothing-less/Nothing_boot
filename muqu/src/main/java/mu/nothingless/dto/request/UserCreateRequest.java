@@ -7,6 +7,7 @@ import lombok.Data;
 import mu.nothingless.enums.AccountStatus;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public class UserCreateRequest {
 
     @NotBlank(message = "用户名不能为空")
     @Size(max = 18, message = "用户名长度不能超过18")
-    private String username;
+    private String userAccount;
 
     @Size(max = 20, message = "用户ID长度不能超过20")
     private String userId;
@@ -30,7 +31,6 @@ public class UserCreateRequest {
     @Size(max = 20, message = "手机号长度不能超过20")
     private String phone;
 
-    @NotBlank(message = "手机号索引不能为空")
     @Size(max = 64, message = "索引长度异常")
     private String phoneIndex;
 
@@ -58,7 +58,7 @@ public class UserCreateRequest {
 
     private Set<String> myRoles;
 
-    private Set<String> myProfiles;
+    private Map<String, Object> myProfiles;
 
     private String myKey;
 

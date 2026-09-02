@@ -9,6 +9,8 @@ import mu.nothingless.exception.BusinessException;
 import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
 import mu.nothingless.utils.RetResult;
+
+import java.util.Vector;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -27,16 +29,16 @@ public class AuthService {
 
     public TokenPairResponse login(LoginRequest request) {
         Authentication authentication = authManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.username(), request.password()));
+                new UsernamePasswordAuthenticationToken(request.userAccount(), request.password()));
 
         String userId = authentication.getName();
-        String username = request.username();
+        String userAccount = request.userAccount();
 
-        var token_pair = jwtUtil.generateToken(userId, username, null);
+        var token_pair = jwtUtil.generateToken(userId, userAccount, null);
         String accessToken = token_pair.accessToken();
         String refreshToken = token_pair.refreshToken();
 
-        log.info("用户 [{}] 登录成功", username);
+        log.info("用户 [{}] 登录成功", userAccount);
 
         return new TokenPairResponse(
                 accessToken,
@@ -52,14 +54,14 @@ public class AuthService {
             }
             String userId = JwtUtil.getUserId(claims);
 
-            // 从 refresh token claims 取 username
-            String username = claims.get("username", String.class);
-            if (username == null || username.isBlank()) {
-                log.warn("Refresh Token 中未找到 username，userId={}", userId);
-                username = userId; // 或者查数据库，或者抛异常
+            // 从 refresh token claims 取 userAccount
+            String userAccount = claims.get("userAccount", String.class);
+            if (userAccount == null || userAccount.isBlank()) {
+                log.warn("Refresh Token 中未找到 userAccount，userId={}", userId);
+                userAccount = userId; // 或者查数据库，或者抛异常
             }
 
-            String newAccessToken = jwtUtil.generateToken(userId, username, null).accessToken();
+            String newAccessToken = jwtUtil.generateToken(userId, userAccount, null).accessToken();
 
             log.debug("用户 [{}] 刷新访问令牌成功", userId);
 

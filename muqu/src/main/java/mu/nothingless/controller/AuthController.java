@@ -5,14 +5,24 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.dto.request.LoginRequest;
+import mu.nothingless.dto.request.UserCreateRequest;
 import mu.nothingless.dto.response.AccessTokenResponse;
 import mu.nothingless.dto.response.TokenPairResponse;
 import mu.nothingless.dto.response.UserInfo;
+import mu.nothingless.entity.UserEntity;
 import mu.nothingless.service.AuthService;
+import mu.nothingless.service.user.UserService;
+import mu.nothingless.service.user.impl.UserServiceImpl;
+import mu.nothingless.utils.AesGcmUtil;
+
+import java.util.Vector;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+
 
 @Slf4j
 @RestController
@@ -22,6 +32,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
+    private final UserService userService;
 
     @PostMapping("/login")
     public TokenPairResponse login(@RequestBody @Valid LoginRequest request) {
@@ -30,7 +41,7 @@ public class AuthController {
 
     @PostMapping("/refresh")
     public AccessTokenResponse refresh(
-            @RequestHeader("X-Refresh-Token") @NotBlank(message = "刷新令牌不能为空") String refreshToken) {
+            @RequestHeader("X-Refresh-Token") @NotBlank(message = "Refresh token cannot be empty") String refreshToken) {
         return authService.refresh(refreshToken);
     }
 
@@ -40,4 +51,16 @@ public class AuthController {
         // 直接注入 Authentication
         return new UserInfo(authentication.getName());
     }
+
+    @GetMapping("/getAll")
+    public Vector getAllUser() {
+        return userService.getAllUser();
+    }
+
+    @PostMapping("/register")
+    public UserEntity createUser(@RequestBody @Valid UserCreateRequest request) {
+        return userService.createUser(request);
+    }
+    
+    
 }

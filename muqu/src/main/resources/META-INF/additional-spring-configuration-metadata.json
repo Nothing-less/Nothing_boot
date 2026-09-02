@@ -28,5 +28,55 @@
     "name": "aes.aes-key-base64",
     "type": "java.lang.String",
     "description": "A description for 'aes.aes-key-base64'"
+  },
+  {
+    "name": "spring.datasource.dynamic.type",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.dynamic.type'"
+  },
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  },
+  {
+    "name": "jwt.algorithm",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.algorithm'"
+  },
+  {
+    "name": "jwt.refresh-ttl",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.refresh-ttl'"
+  },
+  {
+    "name": "jwt.access-ttl",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.access-ttl'"
+  },
+  {
+    "name": "jwt.redis-check-enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.redis-check-enabled'"
+  },
+  {
+    "name": "jwt.access-token-store-enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.access-token-store-enabled'"
+  },
+  {
+    "name": "jwt.single-device-login-enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.single-device-login-enabled'"
+  },
+  {
+    "name": "security.blind-index.key",
+    "type": "java.lang.String",
+    "description": "A description for 'security.blind-index.key'"
+  },
+  {
+    "name": "security.blind-index.truncate-length",
+    "type": "java.lang.String",
+    "description": "A description for 'security.blind-index.truncate-length'"
   }
 ]}

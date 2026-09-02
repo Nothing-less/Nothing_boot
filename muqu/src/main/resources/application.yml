@@ -10,6 +10,10 @@ spring:
     user:
       name: admin
       password: admin123
+  threads:
+    virtual:
+      enabled: true  # 开启虚拟线程
+
 
   data:
     redis:
@@ -99,6 +103,14 @@ aes:
   key: ShengdeLoveSakuraiYukina_Forever
   # U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI
   aes-key-base64: ${AES_KEY_B64:U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI}
+
+
+security:
+  blind-index:
+    # 生产环境必须通过环境变量注入，严禁写死在代码或配置文件中
+    key: ${BLIND_INDEX_KEY:U2hlbmdkZUxvdmVTYWt1cmFpWXVraW5hX0ZvcmV2ZXI}
+    # 截断到 32 个 hex 字符 = 128 bit，兼顾安全性与索引长度
+    truncate-length: 32
 
 
 logging:
