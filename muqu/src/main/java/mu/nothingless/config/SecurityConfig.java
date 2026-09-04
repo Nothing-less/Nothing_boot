@@ -40,8 +40,12 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/public/**").permitAll()
                         .requestMatchers("/druid/**").permitAll() // Druid 监控
 
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN") // ADMIN 角色才能访问 /admin/**
+                        .requestMatchers("/user/**").hasAnyAuthority("USER", "ADMIN") // USER 或 ADMIN 角色才能访问 /user/**
+                        .requestMatchers("/api/test/**").permitAll() // 测试接口允许所有访问
                         .anyRequest().authenticated() // 其他接口需要登录
                 )
+                
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(entryPoint))
         // 使用 HTTP Basic

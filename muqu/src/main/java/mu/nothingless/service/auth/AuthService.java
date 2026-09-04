@@ -1,4 +1,4 @@
-package mu.nothingless.service;
+package mu.nothingless.service.auth;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,6 @@ import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
 import mu.nothingless.utils.RetResult;
 
-import java.util.Vector;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

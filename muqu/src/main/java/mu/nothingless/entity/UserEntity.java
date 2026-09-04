@@ -1,7 +1,6 @@
 package mu.nothingless.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,7 +23,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
  */
 @Getter
 @Setter
-@ToString(exclude = {"passwordHash", "phone"})
+@ToString  //(exclude = {"passwordHash", "phone"})
 @TableName(value = "sys_user", autoResultMap = true)
 public class UserEntity implements Serializable {
 

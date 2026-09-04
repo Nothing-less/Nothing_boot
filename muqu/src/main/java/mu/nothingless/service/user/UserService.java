@@ -20,4 +20,6 @@ public interface UserService extends IService<UserEntity> {
     boolean removeUser(Long id);
 
     Vector getAllUser();
+
+    Optional<UserEntity> findByUserAccount(String userAccount);
 }

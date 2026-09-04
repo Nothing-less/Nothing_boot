@@ -1,5 +1,5 @@
 package mu.nothingless.security.jwt;
 
-public enum TokenType {
+public enum TokenTypeEnum {
     ACCESS, REFRESH
 }

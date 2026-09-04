@@ -10,10 +10,8 @@ import mu.nothingless.dto.response.AccessTokenResponse;
 import mu.nothingless.dto.response.TokenPairResponse;
 import mu.nothingless.dto.response.UserInfo;
 import mu.nothingless.entity.UserEntity;
-import mu.nothingless.service.AuthService;
+import mu.nothingless.service.auth.AuthService;
 import mu.nothingless.service.user.UserService;
-import mu.nothingless.service.user.impl.UserServiceImpl;
-import mu.nothingless.utils.AesGcmUtil;
 
 import java.util.Vector;
 
@@ -50,11 +48,6 @@ public class AuthController {
     public UserInfo me(Authentication authentication) {
         // 直接注入 Authentication
         return new UserInfo(authentication.getName());
-    }
-
-    @GetMapping("/getAll")
-    public Vector getAllUser() {
-        return userService.getAllUser();
     }
 
     @PostMapping("/register")

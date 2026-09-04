@@ -52,14 +52,14 @@ public class HmacSha256Util {
                 "。请检查 application.yml / 环境变量，切勿使用默认密钥上生产！"
             );
         }
-        log.info("HmacSha256Util 初始化完成，算法：{}，截断长度：{}",
+        log.debug("HmacSha256Util 初始化完成，算法：{}，截断长度：{}",
                  ALGORITHM, truncateLength > 0 ? truncateLength : "无截断");
     }
 
     /**
      * 计算 HMAC-SHA256，返回 16 进制小写字符串
      *
-     * @param plainText 明文，如手机号
+     * @param plainText 明文
      * @return 16 进制哈希值
      * @throws IllegalArgumentException 输入为空时抛出
      * @throws IllegalStateException    计算失败时抛出
@@ -88,12 +88,10 @@ public class HmacSha256Util {
         }
     }
 
-    /**
-     * 兼容旧方法签名
-     */
-    public String generatePhoneIndex(String phone) {
-        return hash(phone);
+    public String encryptToString(String plainText) {
+        return hash(plainText);
     }
+
 
     private static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];

@@ -7,6 +7,7 @@ import mu.nothingless.dto.request.UserCreateRequest;
 import mu.nothingless.entity.UserEntity;
 import mu.nothingless.mapper.UserMapper;
 import mu.nothingless.service.user.UserService;
+import mu.nothingless.utils.AesGcmUtil;
 import mu.nothingless.utils.HmacSha256Util;
 
 import org.springframework.stereotype.Service;
@@ -28,12 +29,27 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
     private final UserMapper userMapper;
     private final UserConvertor userConvertor;
+    
+    private final AesGcmUtil aesGcmUtil;
     private final HmacSha256Util hmacSha256Util;
+
 
 
     @Override
     public Optional<UserEntity> findByUserId(String userId) {
         return userMapper.selectByUserId(userId);
+    }
+
+    @Override
+    public Optional<UserEntity> findByUserAccount(String userAccount) {
+        Optional<UserEntity> user = userMapper.selectByUserAccount(userAccount);
+        if(user.isPresent()){
+            var userEntity = user.get();
+            log.info(userEntity.toString());
+            String pwd = userEntity.getPasswordHash(); // 获取密码哈希
+            log.error("User's password is {}",pwd);
+        }
+        return user;
     }
 
     @Override
@@ -43,8 +59,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         UserEntity entity = userConvertor.toEntity(request);
 
         if (StringUtils.hasText(entity.getPhone())) {
-            entity.setPhoneIndex(generatePhoneIndex(entity.getPhone()));
+            entity.setPhone(aesGcmUtil.encryptToString(entity.getPhone()));
+            entity.setPhoneIndex(hmacSha256Util.encryptToString(entity.getPhone()));
         }
+        entity.setPasswordHash(hmacSha256Util.encryptToString(request.getPassword()));
         entity.setFailedAttempts(0);
         entity.setStatus(mu.nothingless.enums.AccountStatus.ACTIVE);
         save(entity);
@@ -73,9 +91,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         return ok;
     }
 
-    private String generatePhoneIndex(String phone) {
-        return hmacSha256Util.generatePhoneIndex(phone);
-    }
 
     @Override
     public Vector<UserEntity> getAllUser() {

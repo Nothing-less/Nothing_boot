@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.crypto.SecretKey;
+
 import java.security.Key;
 import java.security.KeyPair;
 import java.security.PrivateKey;
@@ -60,27 +61,27 @@ public class JwtUtil {
                 throw new IllegalStateException("非对称算法必须配置 jwt.private-key 和 jwt.public-key");
             }
         }
-        log.info("JwtUtil 配置校验通过 | algorithm={} | accessTtl={} | refreshTtl={}",
+        log.debug("JwtUtil 配置校验通过 | algorithm={} | accessTtl={} | refreshTtl={}",
                 props.getAlgorithm(), props.getAccessTtl(), props.getRefreshTtl());
     }
 
     // ==================== 生成 Token ====================
 
     /**
-     * 生成全新的 Access + Refresh 令牌对。
-     * 若开启单设备登录，会自动踢掉该用户所有旧令牌。
+     * 生成全新的 Access + Refresh 令牌对
+     * 若开启单设备登录，会自动踢掉该用户所有旧令牌
      */
     public TokenPair generateToken(String userId, String userAccount, Map<String, Object> extra) {
         if (props.isSingleDeviceLoginEnabled()) {
             tokenStore.clearUserTokens(userId);
-            log.info("单设备登录模式：清理用户历史令牌 | userId={}", userId);
+            log.debug("单设备登录模式：清理用户历史令牌 | userId={}", userId);
         }
 
         String accessJti = UUID.randomUUID().toString();
         String refreshJti = UUID.randomUUID().toString();
 
-        String accessToken = buildToken(accessJti, userId, userAccount, TokenType.ACCESS, extra);
-        String refreshToken = buildToken(refreshJti, userId, userAccount, TokenType.REFRESH, null);
+        String accessToken = buildToken(accessJti, userId, userAccount, TokenTypeEnum.ACCESS, extra);
+        String refreshToken = buildToken(refreshJti, userId, userAccount, TokenTypeEnum.REFRESH, null);
 
         tokenStore.storeRefreshToken(userId, refreshJti, props.getRefreshTtl());
 
@@ -93,7 +94,7 @@ public class JwtUtil {
     }
 
     /**
-     * Refresh Token Rotation：用 Refresh Token 换取全新令牌对，旧 Refresh Token 立即失效。
+     * Refresh Token Rotation：用 Refresh Token 换取全新令牌对，旧 Refresh Token 立即失效
      * @throws TokenException 
      */
     public TokenPair refreshToken(String refreshToken) throws TokenException {
@@ -114,7 +115,7 @@ public class JwtUtil {
     public Claims parseAccessToken(String token) throws TokenException {
         Claims claims = parseToken(token);
 
-        if (!TokenType.ACCESS.name().equals(claims.get(TokenClaims.TYPE))) {
+        if (!TokenTypeEnum.ACCESS.name().equals(claims.get(TokenClaims.TYPE))) {
             throw new TokenException("Token 类型错误：要求 Access Token");
         }
 
@@ -129,7 +130,7 @@ public class JwtUtil {
     public Claims parseRefreshToken(String token) throws TokenException {
         Claims claims = parseToken(token);
 
-        if (!TokenType.REFRESH.name().equals(claims.get(TokenClaims.TYPE))) {
+        if (!TokenTypeEnum.REFRESH.name().equals(claims.get(TokenClaims.TYPE))) {
             throw new TokenException("Token 类型错误：要求 Refresh Token");
         }
 
@@ -201,14 +202,14 @@ public class JwtUtil {
     }
 
     public static boolean isRefreshToken(Claims claims) {
-        return TokenType.REFRESH.name().equals(claims.get(TokenClaims.TYPE));
+        return TokenTypeEnum.REFRESH.name().equals(claims.get(TokenClaims.TYPE));
     }
 
     // ==================== 私有方法 ====================
 
-    private String buildToken(String jti, String userId, String userAccount, TokenType type, Map<String, Object> extra) {
+    private String buildToken(String jti, String userId, String userAccount, TokenTypeEnum type, Map<String, Object> extra) {
         Date now = new Date();
-        Duration ttl = (type == TokenType.ACCESS) ? props.getAccessTtl() : props.getRefreshTtl();
+        Duration ttl = (type == TokenTypeEnum.ACCESS) ? props.getAccessTtl() : props.getRefreshTtl();
         Date expiry = new Date(now.getTime() + ttl.toMillis());
 
         JwtBuilder builder = Jwts.builder()

@@ -93,8 +93,7 @@ public class RetResult<T> {
     public static <T> RetResult<T> fail() {
         return error(INTERNAL_SERVER_ERROR, "fail");
     }
-
-    public static <T> RetResult<T> fail(String message) {
+        public static <T> RetResult<T> fail(String message) {
         return error(INTERNAL_SERVER_ERROR, message);
     }
 
@@ -106,12 +105,24 @@ public class RetResult<T> {
         return error(UNAUTHORIZED, "unauthorized");
     }
 
+    public static <T> RetResult<T> unauthorized(String message) {
+        return error(UNAUTHORIZED, message);
+    }
+
     public static <T> RetResult<T> forbidden() {
         return error(FORBIDDEN, "forbidden");
     }
 
+    public static <T> RetResult<T> forbidden(String message) {
+        return error(FORBIDDEN, message);
+    }
+
     public static <T> RetResult<T> notFound() {
         return error(NOT_FOUND, "not found");
+    }
+
+    public static <T> RetResult<T> notFound(String message) {
+        return error(NOT_FOUND, message);
     }
 
     public static <T> RetResult<T> badRequest() {
@@ -124,6 +135,14 @@ public class RetResult<T> {
 
     public static <T> RetResult<T> validateError(String message) {
         return error(UNPROCESSABLE_ENTITY, message);
+    }
+
+    public static <T> RetResult<T> validateError(Map<String, Object> extra) {
+        RetResult<T> result = new RetResult<>();
+        result.setCode(UNPROCESSABLE_ENTITY);
+        result.setMessage("validate error");
+        result.setExtra(extra);
+        return result;
     }
 
     public static <T> RetResult<T> conflict() {
