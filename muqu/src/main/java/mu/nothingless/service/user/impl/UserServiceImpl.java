@@ -33,8 +33,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     private final AesGcmUtil aesGcmUtil;
     private final HmacSha256Util hmacSha256Util;
 
-
-
     @Override
     public Optional<UserEntity> findByUserId(String userId) {
         return userMapper.selectByUserId(userId);
@@ -62,7 +60,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
             entity.setPhone(aesGcmUtil.encryptToString(entity.getPhone()));
             entity.setPhoneIndex(hmacSha256Util.encryptToString(entity.getPhone()));
         }
-        entity.setPasswordHash(hmacSha256Util.encryptToString(request.getPassword()));
+        entity.setPasswordHash(hmacSha256Util.encrypt(request.getPassword()));
         entity.setFailedAttempts(0);
         entity.setStatus(mu.nothingless.enums.AccountStatus.ACTIVE);
         save(entity);
@@ -90,7 +88,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         }
         return ok;
     }
-
 
     @Override
     public Vector<UserEntity> getAllUser() {

@@ -6,7 +6,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import mu.nothingless.exception.CryptoException;
+import mu.nothingless.exceptions.CryptoException;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;

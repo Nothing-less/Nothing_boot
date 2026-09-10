@@ -5,7 +5,8 @@ import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.SecureDigestAlgorithm;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import mu.nothingless.exception.TokenException;
+import mu.nothingless.exceptions.TokenException;
+
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -61,8 +62,8 @@ public class JwtUtil {
                 throw new IllegalStateException("非对称算法必须配置 jwt.private-key 和 jwt.public-key");
             }
         }
-        log.debug("JwtUtil 配置校验通过 | algorithm={} | accessTtl={} | refreshTtl={}",
-                props.getAlgorithm(), props.getAccessTtl(), props.getRefreshTtl());
+        // log.debug("JwtUtil 配置校验通过 | algorithm={} | accessTtl={} | refreshTtl={}", props.getAlgorithm(),
+        //         props.getAccessTtl(), props.getRefreshTtl());
     }
 
     // ==================== 生成 Token ====================
@@ -74,7 +75,7 @@ public class JwtUtil {
     public TokenPair generateToken(String userId, String userAccount, Map<String, Object> extra) {
         if (props.isSingleDeviceLoginEnabled()) {
             tokenStore.clearUserTokens(userId);
-            log.debug("单设备登录模式：清理用户历史令牌 | userId={}", userId);
+            // log.debug("单设备登录模式：清理用户历史令牌 | userId={}", userId);
         }
 
         String accessJti = UUID.randomUUID().toString();
@@ -95,7 +96,8 @@ public class JwtUtil {
 
     /**
      * Refresh Token Rotation：用 Refresh Token 换取全新令牌对，旧 Refresh Token 立即失效
-     * @throws TokenException 
+     * 
+     * @throws TokenException
      */
     public TokenPair refreshToken(String refreshToken) throws TokenException {
         Claims claims = parseRefreshToken(refreshToken);
@@ -116,12 +118,12 @@ public class JwtUtil {
         Claims claims = parseToken(token);
 
         if (!TokenTypeEnum.ACCESS.name().equals(claims.get(TokenClaims.TYPE))) {
-            throw new TokenException("Token 类型错误：要求 Access Token");
+            throw new TokenException("Token type error: Access Token required");
         }
 
         String jti = claims.getId();
         if (tokenStore.isAccessTokenBlacklisted(jti)) {
-            throw new TokenException("Token 已被注销");
+            throw new TokenException("Token has been canceled");
         }
 
         return claims;
@@ -131,14 +133,14 @@ public class JwtUtil {
         Claims claims = parseToken(token);
 
         if (!TokenTypeEnum.REFRESH.name().equals(claims.get(TokenClaims.TYPE))) {
-            throw new TokenException("Token 类型错误：要求 Refresh Token");
+            throw new TokenException("Token type error: Refresh Token required");
         }
 
         if (props.isRedisCheckEnabled()) {
             String userId = claims.getSubject();
             String jti = claims.getId();
             if (!tokenStore.validateRefreshToken(userId, jti)) {
-                throw new TokenException("Refresh Token 已失效或不存在");
+                throw new TokenException("Refresh Token has expired or does not exist");
             }
         }
 
@@ -207,7 +209,8 @@ public class JwtUtil {
 
     // ==================== 私有方法 ====================
 
-    private String buildToken(String jti, String userId, String userAccount, TokenTypeEnum type, Map<String, Object> extra) {
+    private String buildToken(String jti, String userId, String userAccount, TokenTypeEnum type,
+            Map<String, Object> extra) {
         Date now = new Date();
         Duration ttl = (type == TokenTypeEnum.ACCESS) ? props.getAccessTtl() : props.getRefreshTtl();
         Date expiry = new Date(now.getTime() + ttl.toMillis());

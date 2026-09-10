@@ -4,7 +4,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtException;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
-import mu.nothingless.exception.BusinessException;
+import mu.nothingless.exceptions.BusinessException;
 import mu.nothingless.utils.RetResult;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindException;
@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
     /** Spring Security 认证失败（用户名密码错误等） */
     @ExceptionHandler(AuthenticationException.class)
     public RetResult<Void> handleAuthentication(AuthenticationException e) {
-        log.error("Authentication Service Exception Occurred: \n", e);
+        log.error("Authentication Service Exception Occurred: {}", e.getMessage());
         return RetResult.error(RetResult.UNAUTHORIZED, "认证失败：" + e.getMessage());
     }
 

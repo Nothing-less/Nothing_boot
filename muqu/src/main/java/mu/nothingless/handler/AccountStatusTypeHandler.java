@@ -16,7 +16,7 @@ public class AccountStatusTypeHandler extends BaseTypeHandler<AccountStatus> {
 
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, AccountStatus parameter, JdbcType jdbcType) throws SQLException {
-        ps.setInt(i, parameter.getCode()); // 写入时把 int code 写进去
+        ps.setInt(i, parameter.getCode());
     }
 
     @Override
@@ -29,7 +29,7 @@ public class AccountStatusTypeHandler extends BaseTypeHandler<AccountStatus> {
                 return status;
             }
         }
-        return null; // 或者返回 AccountStatus.ACTIVE 作为默认值
+        return AccountStatus.ACTIVE; // 默认值
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AccountStatusTypeHandler extends BaseTypeHandler<AccountStatus> {
                 return status;
             }
         }
-        return null;
+        return AccountStatus.ACTIVE; // 默认值
     }
 
     @Override
@@ -55,6 +55,6 @@ public class AccountStatusTypeHandler extends BaseTypeHandler<AccountStatus> {
                 return status;
             }
         }
-        return null;
+        return AccountStatus.ACTIVE; // 默认值
     }
 }

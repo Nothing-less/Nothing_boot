@@ -5,16 +5,17 @@ import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.dto.request.LoginRequest;
 import mu.nothingless.dto.response.AccessTokenResponse;
 import mu.nothingless.dto.response.TokenPairResponse;
-import mu.nothingless.exception.BusinessException;
+import mu.nothingless.exceptions.BusinessException;
 import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
 import mu.nothingless.utils.RetResult;
 
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-
+import java.util.concurrent.TimeUnit;
 import io.jsonwebtoken.Claims;
 
 @Slf4j
@@ -38,6 +39,8 @@ public class AuthService {
         String refreshToken = token_pair.refreshToken();
 
         log.info("用户 [{}] 登录成功", userAccount);
+        // 登录成功后存入 Redis，设置过期时间
+
 
         return new TokenPairResponse(
                 accessToken,

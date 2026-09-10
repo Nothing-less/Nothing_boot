@@ -9,7 +9,10 @@
 
     <property name="APP_NAME" value="muqu" />
     <!-- 控制台格式 -->
-    <property name="CONSOLE_PATTERN"
+     <property name="CONSOLE_PATTERN"
+        value="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %cyan(%logger{36}) - %msg%nopex%n" />
+
+    <property name="CONSOLE_PATTERN_2"
         value="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %cyan(%logger{36}) - %msg%n" />
 
     <!-- 文件格式 -->
@@ -91,6 +94,7 @@
         <logger name="mu.nothingless" level="DEBUG" additivity="false">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="ASYNC_FILE" />
+            <appender-ref ref="ASYNC_ERROR" />
         </logger>
     </springProfile>
 

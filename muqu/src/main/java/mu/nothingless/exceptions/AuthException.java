@@ -1,4 +1,4 @@
-package mu.nothingless.exception;
+package mu.nothingless.exceptions;
 
 public class AuthException extends Exception {
 

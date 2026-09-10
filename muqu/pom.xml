@@ -20,7 +20,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <lombok.version>1.18.42</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mybatis-spring-boot.version>4.0.1</mybatis-spring-boot.version>
@@ -195,6 +195,13 @@
             <artifactId>spring-boot-jackson2</artifactId>
         </dependency>
 
+        <!-- Source: https://mvnrepository.com/artifact/org.lionsoul/ip2region -->
+        <dependency>
+            <groupId>org.lionsoul</groupId>
+            <artifactId>ip2region</artifactId>
+            <version>3.3.7</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- ==================== 消息队列 ==================== -->
         <!-- RabbitMQ -->
         <dependency>

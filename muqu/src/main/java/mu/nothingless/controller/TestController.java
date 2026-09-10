@@ -1,6 +1,6 @@
 package mu.nothingless.controller;
 
-import java.util.Vector;
+import java.util.List;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +28,8 @@ public class TestController {
     private final UserService userService;
     
     @GetMapping("/getAll")
-    public Vector getAllUser() {
-        return userService.getAllUser();
+    public List getAllUser() {
+        return  userService.getAllUser();
     }
     @PostMapping("/login")
     public UserEntity doLogin(@RequestBody @Valid LoginRequest request) {

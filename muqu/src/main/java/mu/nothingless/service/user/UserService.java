@@ -3,9 +3,10 @@ package mu.nothingless.service.user;
 import mu.nothingless.dto.request.UserCreateRequest;
 import mu.nothingless.entity.UserEntity;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.Vector;
+
 
 import com.baomidou.mybatisplus.spring.service.IService;
 
@@ -19,7 +20,7 @@ public interface UserService extends IService<UserEntity> {
 
     boolean removeUser(Long id);
 
-    Vector getAllUser();
+    List<UserEntity> getAllUser();
 
     Optional<UserEntity> findByUserAccount(String userAccount);
 }

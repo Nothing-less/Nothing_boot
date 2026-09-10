@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * HMAC-SHA256 盲索引生成器（企业级）
@@ -52,8 +54,8 @@ public class HmacSha256Util {
                 "。请检查 application.yml / 环境变量，切勿使用默认密钥上生产！"
             );
         }
-        log.debug("HmacSha256Util 初始化完成，算法：{}，截断长度：{}",
-                 ALGORITHM, truncateLength > 0 ? truncateLength : "无截断");
+        // log.debug("HmacSha256Util 初始化完成，算法：{}，截断长度：{}",
+        //          ALGORITHM, truncateLength > 0 ? truncateLength : "无截断");
     }
 
     /**
@@ -102,4 +104,50 @@ public class HmacSha256Util {
         }
         return new String(hexChars);
     }
+
+        
+    /**
+     * 将字符串进行 SHA256 加密
+     * @param input 原始字符串（UTF-8编码）
+     * @return 64位十六进制密文（小写）
+     */
+    public String encrypt(String input) {
+        if (input == null || input.isEmpty()) {
+            return null;
+        }
+        
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+            
+            // 转换为十六进制字符串
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            
+            return hexString.toString();
+            
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-256 算法不可用", e);
+        }
+    }
+    
+    /**
+     * 验证密码（比较两个密文是否一致）
+     * @param input
+     * @param stored
+     * @return 是否匹配
+     */
+    public static boolean verify(String input, String stored) {
+        if (input == null || stored == null) {
+            return false;
+        }
+        return input.equalsIgnoreCase(stored);
+    }
+    
 }

@@ -13,8 +13,6 @@ import mu.nothingless.entity.UserEntity;
 import mu.nothingless.service.auth.AuthService;
 import mu.nothingless.service.user.UserService;
 
-import java.util.Vector;
-
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
