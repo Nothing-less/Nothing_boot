@@ -34,3 +34,5 @@ build/
 .vscode/
 .mvn/
 .logs/
+*.log
+*.log.*
