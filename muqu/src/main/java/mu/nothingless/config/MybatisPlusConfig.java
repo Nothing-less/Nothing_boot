@@ -44,7 +44,7 @@ public class MybatisPlusConfig {
         // 1. 多租户插件（行级数据隔离）
         interceptor.addInnerInterceptor(new TenantLineInnerInterceptor(tenantLineHandler()));
 
-        // 2. 分页插件（必须放在多租户之后）
+        // 2. 分页插件
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.POSTGRE_SQL));
 
         // 3. 乐观锁插件

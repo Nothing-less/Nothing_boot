@@ -1,6 +1,6 @@
 package mu.nothingless.service.user;
 
-import mu.nothingless.dto.request.UserCreateRequest;
+import mu.nothingless.dto.UserCreateRequest;
 import mu.nothingless.entity.UserEntity;
 
 import java.util.List;

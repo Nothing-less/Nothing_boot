@@ -1,28 +1,99 @@
-2026-09-07 09:36:09.160 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 16540 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
-2026-09-07 09:36:09.164 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
-2026-09-07 09:36:09.508 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
-2026-09-07 09:36:09.508 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-09-07 09:36:09.509 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-09-07 09:36:11.276 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2026-09-07 09:36:11.278 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-09-07 09:36:11.313 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
-2026-09-07 09:36:12.820 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-09-07 09:36:12.840 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-07 09:36:12.841 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-09-07 09:36:12.925 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3415 ms
-2026-09-07 09:36:13.329 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
-2026-09-07 09:36:13.779 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:36:13.891 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:36:16.062 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
-2026-09-07 09:36:16.063 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2026-09-07 09:36:16.063 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2026-09-07 09:36:16.450 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-09-07 09:36:17.145 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@75a727df
-2026-09-07 09:36:17.774 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2026-09-07 09:36:17.786 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2026-09-07 09:36:17.787 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
-2026-09-07 09:36:17.788 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2026-09-07 09:36:17.792 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2026-09-11 09:03:08.523 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19400 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 09:03:08.526 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 09:03:08.805 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 09:03:08.806 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 09:03:08.806 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 09:03:11.179 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 09:03:11.183 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 09:03:11.213 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2026-09-11 09:03:12.855 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 09:03:12.883 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 09:03:12.884 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 09:03:12.954 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4147 ms
+2026-09-11 09:03:13.339 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 09:03:13.884 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:03:14.007 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:03:15.308 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 09:03:15.309 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 09:03:15.311 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 09:03:15.841 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 09:03:16.000 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ipLocationService' defined in file [C:\Shengde\Repo\MQ\muqu\target\classes\mu\nothingless\service\IpLocationService.class]: Failed to instantiate [mu.nothingless.service.IpLocationService]: Constructor threw exception
+2026-09-11 09:03:16.002 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 09:03:16.007 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-11 09:03:16.017 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-11 09:03:16.017 [restartedMain] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 09:03:16.018 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 09:03:16.065 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-11 09:03:16.159 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-11 09:03:16.172 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ipLocationService' defined in file [C:\Shengde\Repo\MQ\muqu\target\classes\mu\nothingless\service\IpLocationService.class]: Failed to instantiate [mu.nothingless.service.IpLocationService]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1342)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at qu.nothingless.MuquApplication.main(MuquApplication.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [mu.nothingless.service.IpLocationService]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:220)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1336)
+	... 22 common frames omitted
+Caused by: java.lang.IllegalStateException: 加载 IPv4 库失败，请检查 ip2region_v4.xdb 是否为完整二进制文件
+	at mu.nothingless.service.IpLocationService.<init>(IpLocationService.java:35)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:194)
+	... 24 common frames omitted
+Caused by: org.lionsoul.ip2region.xdb.XdbException: invalid xdb structure version `26684`
+	at org.lionsoul.ip2region.xdb.Version.fromHeader(Version.java:68)
+	at mu.nothingless.service.IpLocationService.loadSearcher(IpLocationService.java:71)
+	at mu.nothingless.service.IpLocationService.<init>(IpLocationService.java:23)
+	... 28 common frames omitted
+2026-09-11 09:37:55.253 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 30016 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 09:37:55.257 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 09:37:55.500 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 09:37:55.501 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 09:37:55.501 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 09:37:57.210 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 09:37:57.212 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 09:37:57.238 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2026-09-11 09:37:58.726 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 09:37:58.739 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 09:37:58.740 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 09:37:58.827 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3325 ms
+2026-09-11 09:37:59.262 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 09:37:59.708 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:37:59.791 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:38:01.770 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 09:38:01.771 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 09:38:01.772 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 09:38:02.356 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 09:38:03.339 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@28f209fb
+2026-09-11 09:38:04.210 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 09:38:04.232 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 09:38:04.233 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 09:38:04.235 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 09:38:04.238 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -30,33 +101,349 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2026-09-07 09:36:17.793 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2026-09-07 09:36:17.793 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
-2026-09-07 09:36:17.795 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@40be64fc
-2026-09-07 09:36:18.248 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-09-07 09:36:18.402 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2026-09-07 09:36:18.405 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2026-09-07 09:36:18.405 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2026-09-07 09:36:18.406 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-07 09:36:18.407 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-07 09:36:18.409 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-09-07 09:36:18.413 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 10.315 seconds (process running for 10.903)
-2026-09-07 09:36:30.634 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - 用户创建成功 | userId=I_Love_U_So | tenantId=1
-2026-09-07 09:37:11.174 [tomcat-handler-1] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 5201314
-2026-09-07 09:37:11.264 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
-2026-09-07 09:37:11.265 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
-2026-09-07 09:38:14.414 [tomcat-handler-2] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
-2026-09-07 09:38:14.416 [tomcat-handler-2] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
-2026-09-07 09:38:14.422 [tomcat-handler-2] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
-2026-09-07 09:38:14.440 [tomcat-handler-2] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 
+2026-09-11 09:38:04.239 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 09:38:04.239 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 09:38:04.239 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@38fbb769
+2026-09-11 09:38:04.700 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 09:38:04.792 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 09:38:04.795 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 09:38:04.796 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 09:38:04.808 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 10.223 seconds (process running for 10.83)
+2026-09-11 09:38:05.320 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 09:38:05.321 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 09:38:05.323 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-11 09:38:12.832 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 09:38:12.832 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
+2026-09-11 09:38:12.834 [tomcat-handler-0] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 09:38:12.843 [tomcat-handler-0] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 09:38:12.874 [tomcat-handler-0] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 09:40:25.899 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - 用户创建成功 | userId=I_Love_U_So | tenantId=1
+2026-09-11 09:40:39.889 [tomcat-handler-2] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 09:40:39.889 [tomcat-handler-2] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 09:40:39.889 [tomcat-handler-2] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 09:40:39.891 [tomcat-handler-2] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 09:40:39.892 [tomcat-handler-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 09:43:13.777 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 27344 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 09:43:13.779 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 09:43:14.058 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 09:43:14.059 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 09:43:14.059 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 09:43:15.653 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 09:43:15.656 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 09:43:15.690 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2026-09-11 09:43:17.318 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 09:43:17.335 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 09:43:17.336 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 09:43:17.409 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3349 ms
+2026-09-11 09:43:17.749 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 09:43:18.495 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:43:18.679 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:43:21.434 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 09:43:21.436 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 09:43:21.437 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 09:43:22.309 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 09:43:24.292 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@28f209fb
+2026-09-11 09:43:25.844 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 09:43:25.894 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 09:43:25.896 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 09:43:25.899 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 09:43:25.902 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:92)
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.performPreCheck(AbstractUserDetailsAuthenticationProvider.java:198)
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:159)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:183)
-	at mu.nothingless.service.auth.AuthService.login(AuthService.java:30)
-	at mu.nothingless.controller.AuthController.login(AuthController.java:35)
+2026-09-11 09:43:25.903 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 09:43:25.904 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 09:43:25.904 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@622a3f19
+2026-09-11 09:43:26.433 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 09:43:26.548 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 09:43:26.552 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 09:43:26.553 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 09:43:26.573 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 13.374 seconds (process running for 13.959)
+2026-09-11 09:43:26.971 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 09:43:26.972 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 09:43:26.975 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-09-11 09:43:38.866 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 09:43:38.869 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 09:43:38.878 [tomcat-handler-0] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 09:43:38.902 [tomcat-handler-0] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 09:43:38.946 [tomcat-handler-0] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 09:58:59.725 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 28748 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 09:58:59.729 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 09:58:59.967 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 09:58:59.967 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 09:58:59.968 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 09:59:01.726 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 09:59:01.728 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 09:59:01.776 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2026-09-11 09:59:03.268 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 09:59:03.287 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 09:59:03.287 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 09:59:03.351 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3383 ms
+2026-09-11 09:59:03.892 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 09:59:04.306 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:59:04.422 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:59:06.358 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 09:59:06.358 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 09:59:06.359 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 09:59:06.893 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 09:59:07.771 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@28f209fb
+2026-09-11 09:59:08.493 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 09:59:08.520 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 09:59:08.520 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 09:59:08.522 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 09:59:08.523 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 09:59:08.523 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 09:59:08.524 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 09:59:08.524 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7691576e
+2026-09-11 09:59:09.191 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 09:59:09.320 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 09:59:09.322 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 09:59:09.322 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 09:59:09.332 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 10.244 seconds (process running for 10.83)
+2026-09-11 09:59:10.056 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 09:59:10.056 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 09:59:10.062 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-09-11 09:59:35.323 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 20352 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 09:59:35.325 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 09:59:35.564 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 09:59:35.564 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 09:59:35.564 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 09:59:37.176 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 09:59:37.178 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 09:59:37.225 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2026-09-11 09:59:38.657 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 09:59:38.674 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 09:59:38.674 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 09:59:38.738 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3173 ms
+2026-09-11 09:59:39.136 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 09:59:39.512 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:59:39.610 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 09:59:41.300 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 09:59:41.301 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 09:59:41.301 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 09:59:41.693 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 09:59:41.707 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testController': Lookup method resolution failed
+2026-09-11 09:59:41.707 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 09:59:41.710 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-11 09:59:41.718 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-11 09:59:41.719 [restartedMain] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 09:59:41.720 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 09:59:41.769 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-11 09:59:41.867 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-11 09:59:41.886 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:482)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1319)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at qu.nothingless.MuquApplication.main(MuquApplication.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [mu.nothingless.controller.TestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2c318b9c]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:460)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: LoginRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: LoginRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:547)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 30 common frames omitted
+2026-09-11 10:00:18.052 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 22860 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ\muqu)
+2026-09-11 10:00:18.059 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:00:18.433 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 10:00:18.434 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 10:00:18.434 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 10:00:20.306 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:00:20.311 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:00:20.375 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:00:22.206 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:00:22.225 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:00:22.226 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:00:22.334 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3899 ms
+2026-09-11 10:00:22.762 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:00:23.196 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:00:23.291 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:00:25.389 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 10:00:25.389 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:00:25.389 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:00:25.905 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:00:25.921 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testController': Lookup method resolution failed
+2026-09-11 10:00:25.922 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:00:25.927 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-11 10:00:25.933 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-11 10:00:25.933 [restartedMain] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:00:25.938 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:00:26.035 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-09-11 10:00:26.147 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-11 10:00:26.174 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'testController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:482)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1319)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at qu.nothingless.MuquApplication.main(MuquApplication.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [mu.nothingless.controller.TestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2c2c4368]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:460)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: LoginRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: LoginRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:547)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 30 common frames omitted
+2026-09-11 10:01:50.783 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 13332 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ\muqu)
+2026-09-11 10:01:50.786 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:01:51.066 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 10:01:51.067 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 10:01:51.067 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 10:01:52.688 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:01:52.690 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:01:52.714 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:01:54.470 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:01:54.497 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:01:54.500 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:01:54.608 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3540 ms
+2026-09-11 10:01:55.015 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:01:55.662 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:01:55.808 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:01:57.998 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 10:01:57.999 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:01:57.999 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:01:58.556 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:01:59.593 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@7bc1a6f7
+2026-09-11 10:02:00.299 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:02:00.327 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:02:00.329 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:02:00.331 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:02:00.332 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:02:00.332 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:02:00.333 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:02:00.333 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4200d6a2
+2026-09-11 10:02:00.731 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:02:00.821 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:02:00.824 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:02:00.825 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:02:00.839 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 10.758 seconds (process running for 11.843)
+2026-09-11 10:02:03.050 [RMI TCP Connection(1)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:02:03.051 [RMI TCP Connection(1)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:02:03.054 [RMI TCP Connection(1)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-11 10:02:08.528 [tomcat-handler-0] ERROR m.n.advice.GlobalExceptionHandler - Runtime Exception Occurred:                
+
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: org.postgresql.util.PSQLException: 错误: 重复键违反唯一约束"idx_sys_user_user_id"
+  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在
+### The error may exist in mu/nothingless/mapper/UserMapper.java (best guess)
+### The error may involve mu.nothingless.mapper.UserMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO sys_user (tab_id, my_user_account, my_user_id, my_phone, my_phone_index, password_hash, my_account_status, failed_attempts, my_roles, my_profiles, my_version, bool_deleted, time_created_at, time_updated_at, who_created_by, who_updated_by, my_tenant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+### Cause: org.postgresql.util.PSQLException: 错误: 重复键违反唯一约束"idx_sys_user_user_id"
+  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在
+; 错误: 重复键违反唯一约束"idx_sys_user_user_id"
+  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:252)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:95)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:362)
+	at jdk.proxy2/jdk.proxy2.$Proxy137.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:239)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:81)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy3/jdk.proxy3.$Proxy145.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.repository.IRepository.save(IRepository.java:37)
+	at mu.nothingless.service.user.impl.UserServiceImpl.createUser(UserServiceImpl.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at mu.nothingless.service.user.impl.UserServiceImpl$$SpringCGLIB$$0.createUser(<generated>)
+	at mu.nothingless.controller.AuthController.createUser(AuthController.java:53)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
@@ -65,7 +452,7 @@ org.springframework.security.authentication.BadCredentialsException: 用户名�
 	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:172)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
-	at mu.nothingless.controller.AuthController$$SpringCGLIB$$0.login(<generated>)
+	at mu.nothingless.controller.AuthController$$SpringCGLIB$$0.createUser(<generated>)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
@@ -187,108 +574,83 @@ org.springframework.security.authentication.BadCredentialsException: 用户名�
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
 	at java.base/java.lang.VirtualThread.run(VirtualThread.java:456)
-2026-09-07 09:38:14.450 [tomcat-handler-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
-2026-09-07 09:46:57.713 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2026-09-07 09:46:57.722 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2026-09-07 09:46:57.725 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-09-07 09:46:57.783 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-09-07 09:46:57.795 [Thread-1] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
-2026-09-07 09:46:57.795 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2026-09-07 09:46:57.796 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2026-09-07 09:46:57.796 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2026-09-07 09:46:57.802 [Thread-1] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
-2026-09-07 09:46:57.805 [Thread-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
-2026-09-07 09:46:57.812 [Thread-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
-2026-09-07 09:46:57.812 [Thread-1] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
-2026-09-07 09:46:57.812 [Thread-1] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
-2026-09-07 09:46:58.112 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 16540 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
-2026-09-07 09:46:58.114 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
-2026-09-07 09:46:59.635 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2026-09-07 09:46:59.640 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-09-07 09:46:59.656 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
-2026-09-07 09:47:00.195 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-09-07 09:47:00.198 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-07 09:47:00.198 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-09-07 09:47:00.321 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2197 ms
-2026-09-07 09:47:00.578 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
-2026-09-07 09:47:00.717 [redisson-netty-5-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:47:00.992 [redisson-netty-5-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:47:01.112 [restartedMain] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalExceptionHandler': Lookup method resolution failed
-2026-09-07 09:47:01.140 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2026-09-07 09:47:01.154 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-09-07 09:47:01.188 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'globalExceptionHandler': Lookup method resolution failed
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:482)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1319)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1216)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at qu.nothingless.MuquApplication.main(MuquApplication.java:19)
+Caused by: org.postgresql.util.PSQLException: 错误: 重复键违反唯一约束"idx_sys_user_user_id"
+  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:182)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3462)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:434)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3460)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:158)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:483)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [mu.nothingless.advice.GlobalExceptionHandler] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3f8ad5ed]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:460)
-	... 24 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: BusinessException
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 26 common frames omitted
-Caused by: java.lang.ClassNotFoundException: BusinessException
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:547)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
-	... 30 common frames omitted
-2026-09-07 09:58:19.917 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 23560 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
-2026-09-07 09:58:19.919 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
-2026-09-07 09:58:20.207 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
-2026-09-07 09:58:20.207 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-09-07 09:58:20.208 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-09-07 09:58:21.767 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-2026-09-07 09:58:21.770 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-09-07 09:58:21.803 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
-2026-09-07 09:58:23.346 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-09-07 09:58:23.359 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-07 09:58:23.359 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-09-07 09:58:23.424 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3215 ms
-2026-09-07 09:58:23.799 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
-2026-09-07 09:58:24.216 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:58:24.314 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
-2026-09-07 09:58:26.006 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
-2026-09-07 09:58:26.006 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
-2026-09-07 09:58:26.006 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
-2026-09-07 09:58:26.423 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2026-09-07 09:58:27.439 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ae82059
-2026-09-07 09:58:27.993 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
-2026-09-07 09:58:28.003 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2026-09-07 09:58:28.003 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
-2026-09-07 09:58:28.005 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
-2026-09-07 09:58:28.006 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy171.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy169.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:61)
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:106)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:59)
+	at jdk.proxy2/jdk.proxy2.$Proxy168.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:348)
+	... 150 common frames omitted
+2026-09-11 10:02:08.556 [tomcat-handler-0] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DuplicateKeyException: <EOL><EOL>### Error updating database.  Cause: org.postgresql.util.PSQLException: 错误: 重复键违反唯一约束"idx_sys_user_user_id"<EOL>  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在<EOL><EOL>### The error may exist in mu/nothingless/mapper/UserMapper.java (best guess)<EOL><EOL>### The error may involve mu.nothingless.mapper.UserMapper.insert-Inline<EOL><EOL>### The error occurred while setting parameters<EOL><EOL>### SQL: INSERT INTO sys_user (tab_id, my_user_account, my_user_id, my_phone, my_phone_index, password_hash, my_account_status, failed_attempts, my_roles, my_profiles, my_version, bool_deleted, time_created_at, time_updated_at, who_created_by, who_updated_by, my_tenant_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)<EOL><EOL>### Cause: org.postgresql.util.PSQLException: 错误: 重复键违反唯一约束"idx_sys_user_user_id"<EOL>  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在<EOL>; 错误: 重复键违反唯一约束"idx_sys_user_user_id"<EOL>  详细：键值"(my_user_id)=(I_Love_U_So)" 已经存在]
+2026-09-11 10:02:21.330 [tomcat-handler-1] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:02:21.638 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:02:21.639 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:02:21.649 [tomcat-handler-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:02:21.663 [tomcat-handler-1] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 10:02:21.665 [tomcat-handler-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 10:03:47.663 [tomcat-handler-2] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:03:59.788 [tomcat-handler-3] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:07:32.823 [tomcat-handler-4] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 5201314
+2026-09-11 10:07:32.849 [tomcat-handler-4] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:07:32.850 [tomcat-handler-4] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:07:49.241 [tomcat-handler-5] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:09:19.329 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:09:19.333 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:09:19.623 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 10:09:19.624 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 10:09:19.625 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 10:09:21.454 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:09:21.456 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:09:21.489 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:09:23.203 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:09:23.227 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:09:23.241 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:09:23.340 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3713 ms
+2026-09-11 10:09:23.771 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:09:24.618 [redisson-netty-1-7] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:09:24.800 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:09:27.092 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 10:09:27.094 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:09:27.094 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:09:27.679 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:09:28.725 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@28f209fb
+2026-09-11 10:09:29.461 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:09:29.474 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:09:29.475 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:09:29.476 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:09:29.477 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -296,27 +658,495 @@ Caused by: java.lang.ClassNotFoundException: BusinessException
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2026-09-07 09:58:28.006 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2026-09-07 09:58:28.006 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
-2026-09-07 09:58:28.007 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@19adae2d
-2026-09-07 09:58:28.309 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-09-07 09:58:28.401 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2026-09-07 09:58:28.407 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
-2026-09-07 09:58:28.408 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2026-09-07 09:58:28.427 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 9.448 seconds (process running for 10.076)
-2026-09-07 09:58:28.753 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-07 09:58:28.754 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-07 09:58:28.756 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-09-07 09:58:42.075 [tomcat-handler-0] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 5201314
-2026-09-07 09:58:42.391 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
-2026-09-07 09:58:42.391 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
-2026-09-07 09:58:49.252 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
-2026-09-07 09:58:49.253 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
-2026-09-07 09:58:49.258 [tomcat-handler-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
-2026-09-07 09:58:49.272 [tomcat-handler-1] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
-2026-09-07 09:58:49.276 [tomcat-handler-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
-2026-09-07 09:58:58.463 [tomcat-handler-2] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2096774578883448833, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:cBrhAhudJ8ZJ/Laa:Yu1HZamF73XxiWPrZv0Kd3t/68Jq+LtYiuwr, phoneIndex=Y_avLuiverkkkiYia_kL_kak_ukkY_ke, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=rekkeSiSoooeSkauukarSurkkuuurokS, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-07T09:36:30.451704, updatedAt=2026-09-07T09:36:30.451704, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
-2026-09-07 09:58:58.463 [tomcat-handler-2] ERROR m.n.s.user.impl.UserServiceImpl - User's password is rekkeSiSoooeSkauukarSurkkuuurokS
-2026-09-07 09:58:58.464 [tomcat-handler-2] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
-2026-09-07 09:58:58.464 [tomcat-handler-2] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
-2026-09-07 09:58:58.465 [tomcat-handler-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 10:09:29.477 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:09:29.478 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:09:29.479 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3ccb3274
+2026-09-11 10:09:29.905 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:09:29.990 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:09:29.993 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:09:29.993 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:09:30.006 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 11.324 seconds (process running for 11.951)
+2026-09-11 10:09:32.371 [RMI TCP Connection(1)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:09:32.372 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:09:32.374 [RMI TCP Connection(1)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-11 10:09:44.993 [tomcat-handler-0] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:09:52.072 [tomcat-handler-1] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:09:52.458 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:09:52.458 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:09:52.464 [tomcat-handler-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:09:52.490 [tomcat-handler-1] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 10:09:52.513 [tomcat-handler-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 10:11:04.232 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:11:04.236 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:11:04.238 [Thread-1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:11:04.252 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:11:04.264 [Thread-1] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:11:04.265 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:11:04.266 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:11:04.267 [Thread-1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:11:04.274 [Thread-1] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:11:04.280 [Thread-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-09-11 10:11:04.287 [Thread-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-09-11 10:11:04.287 [Thread-1] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:11:04.288 [Thread-1] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:11:04.569 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:11:04.570 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:11:05.277 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:11:05.278 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:11:05.284 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:11:05.530 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:11:05.532 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:11:05.533 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:11:05.598 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1021 ms
+2026-09-11 10:11:05.659 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:11:05.703 [redisson-netty-5-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:11:05.784 [redisson-netty-5-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:11:07.000 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2,master} inited
+2026-09-11 10:11:07.000 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:11:07.000 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:11:07.106 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:11:07.333 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@19488ddc
+2026-09-11 10:11:07.406 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:11:07.407 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:11:07.407 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:11:07.407 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:11:07.407 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:11:07.407 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:11:07.408 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:11:07.408 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6ec433f8
+2026-09-11 10:11:07.476 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:11:07.502 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:11:07.503 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:11:07.504 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:11:07.510 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.997 seconds (process running for 109.453)
+2026-09-11 10:11:07.514 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:11:14.585 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:11:14.592 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:11:14.595 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-11 10:11:14.644 [tomcat-handler-0] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 5201314
+2026-09-11 10:11:14.738 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:11:14.739 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:11:33.425 [tomcat-handler-1] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:11:43.302 [tomcat-handler-2] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:13:28.965 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:13:28.967 [Thread-8] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:13:28.967 [Thread-8] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:13:28.975 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:13:28.978 [Thread-8] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:13:28.978 [Thread-8] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:13:28.978 [Thread-8] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:13:28.978 [Thread-8] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:13:28.979 [Thread-8] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:13:28.980 [Thread-8] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closing ...
+2026-09-11 10:13:28.982 [Thread-8] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} closed
+2026-09-11 10:13:28.982 [Thread-8] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:13:28.982 [Thread-8] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:13:29.148 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:13:29.149 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:13:29.583 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:13:29.584 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:13:29.587 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:13:29.717 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:13:29.718 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:13:29.718 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:13:29.753 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 597 ms
+2026-09-11 10:13:29.792 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:13:29.833 [redisson-netty-8-7] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:13:29.911 [redisson-netty-8-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:13:31.007 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3,master} inited
+2026-09-11 10:13:31.008 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:13:31.008 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:13:31.101 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:13:31.314 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@6408e976
+2026-09-11 10:13:31.383 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:13:31.384 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:13:31.384 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:13:31.384 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:13:31.384 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:13:31.385 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:13:31.385 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:13:31.385 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@753960f2
+2026-09-11 10:13:31.458 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:13:31.491 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:13:31.492 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:13:31.492 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:13:31.494 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.411 seconds (process running for 253.436)
+2026-09-11 10:13:31.497 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:13:59.963 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:13:59.964 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:13:59.968 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-09-11 10:13:59.977 [tomcat-handler-0] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2026-09-11 10:14:02.544 [tomcat-handler-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2026-09-11 10:14:21.294 [tomcat-handler-3] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:14:21.294 [tomcat-handler-3] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:14:21.296 [tomcat-handler-3] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:19:40.833 [tomcat-handler-4] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:19:40.913 [tomcat-handler-4] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:19:40.914 [tomcat-handler-4] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:19:40.914 [tomcat-handler-4] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:19:40.916 [tomcat-handler-4] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 10:19:40.918 [tomcat-handler-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 10:19:50.543 [tomcat-handler-5] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:19:50.543 [tomcat-handler-5] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:19:50.544 [tomcat-handler-5] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:20:22.541 [tomcat-handler-6] WARN  mu.nothingless.security.jwt.JwtUtil - Token 已过期 | jti=b5e47bf6-4879-43cb-9364-b270401f256c
+2026-09-11 10:20:30.295 [tomcat-handler-7] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:20:30.296 [tomcat-handler-7] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:20:30.296 [tomcat-handler-7] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:20:46.344 [tomcat-handler-8] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:20:46.344 [tomcat-handler-8] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:20:46.345 [tomcat-handler-8] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-09-11 10:21:10.079 [tomcat-handler-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-11 10:21:38.844 [tomcat-handler-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-09-11 10:21:41.940 [tomcat-handler-11] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 7758520
+2026-09-11 10:21:41.947 [tomcat-handler-11] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:21:41.948 [tomcat-handler-11] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:26:52.942 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-09-11 10:26:52.944 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:26:52.944 [Thread-15] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:26:52.955 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:26:52.959 [Thread-15] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:26:52.959 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:26:52.959 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:26:52.959 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:26:52.961 [Thread-15] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:26:52.961 [Thread-15] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} closing ...
+2026-09-11 10:26:52.963 [Thread-15] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} closed
+2026-09-11 10:26:52.963 [Thread-15] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:26:52.963 [Thread-15] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:26:53.107 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:26:53.108 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:26:54.052 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:26:54.053 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:26:54.059 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:26:54.442 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:26:54.443 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:26:54.444 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:26:54.491 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1378 ms
+2026-09-11 10:26:54.650 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:26:54.753 [redisson-netty-11-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:26:54.843 [redisson-netty-11-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:26:56.255 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4,master} inited
+2026-09-11 10:26:56.255 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:26:56.255 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:26:56.343 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:26:56.602 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e84eace
+2026-09-11 10:26:56.666 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:26:56.667 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:26:56.667 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:26:56.667 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:26:56.668 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:26:56.668 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:26:56.668 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:26:56.668 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4d54b5b5
+2026-09-11 10:26:56.737 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:26:56.770 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:26:56.771 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:26:56.772 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:26:56.776 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 3.724 seconds (process running for 1058.7)
+2026-09-11 10:26:56.787 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:26:58.161 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:26:58.163 [Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:26:58.164 [Thread-25] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:26:58.208 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:26:58.212 [Thread-25] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:26:58.213 [Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:26:58.213 [Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:26:58.213 [Thread-25] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:26:58.215 [Thread-25] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:26:58.216 [Thread-25] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} closing ...
+2026-09-11 10:26:58.218 [Thread-25] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} closed
+2026-09-11 10:26:58.219 [Thread-25] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:26:58.220 [Thread-25] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:26:58.401 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:26:58.402 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:26:58.758 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:26:58.758 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:26:58.761 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:26:58.916 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:26:58.916 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:26:58.917 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:26:58.957 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 551 ms
+2026-09-11 10:26:59.031 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:26:59.079 [redisson-netty-14-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:26:59.207 [redisson-netty-14-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:27:00.266 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5,master} inited
+2026-09-11 10:27:00.266 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:27:00.266 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:27:00.351 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:27:00.637 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@419f5831
+2026-09-11 10:27:00.704 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:27:00.705 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:27:00.705 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:27:00.705 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:27:00.705 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:27:00.706 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:27:00.706 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:27:00.706 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@500ccc51
+2026-09-11 10:27:00.764 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:27:00.789 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:27:00.790 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:27:00.790 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:27:00.794 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.443 seconds (process running for 1062.718)
+2026-09-11 10:27:00.796 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:27:07.434 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:27:07.436 [Thread-31] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:27:07.436 [Thread-31] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:27:07.446 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:27:07.451 [Thread-31] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:27:07.451 [Thread-31] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:27:07.451 [Thread-31] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:27:07.452 [Thread-31] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:27:07.453 [Thread-31] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:27:07.453 [Thread-31] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} closing ...
+2026-09-11 10:27:07.454 [Thread-31] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} closed
+2026-09-11 10:27:07.454 [Thread-31] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:27:07.454 [Thread-31] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:27:07.558 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:27:07.558 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:27:07.852 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:27:07.852 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:27:07.855 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 0 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:27:07.973 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:27:07.973 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:27:07.974 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:27:07.996 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 436 ms
+2026-09-11 10:27:08.036 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:27:08.072 [redisson-netty-17-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:27:08.144 [redisson-netty-17-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:27:09.240 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6,master} inited
+2026-09-11 10:27:09.240 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:27:09.241 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:27:09.311 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:27:09.585 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@3792eafc
+2026-09-11 10:27:09.673 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:27:09.674 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:27:09.674 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:27:09.675 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:27:09.675 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:27:09.675 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:27:09.675 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:27:09.675 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1926e0d
+2026-09-11 10:27:09.764 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:27:09.806 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:27:09.807 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:27:09.807 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:27:09.811 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.286 seconds (process running for 1071.736)
+2026-09-11 10:27:09.814 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:28:32.468 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:28:32.469 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:28:32.470 [Thread-37] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:28:32.486 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:28:32.489 [Thread-37] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:28:32.490 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:28:32.490 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:28:32.490 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:28:32.491 [Thread-37] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:28:32.491 [Thread-37] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} closing ...
+2026-09-11 10:28:32.493 [Thread-37] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} closed
+2026-09-11 10:28:32.493 [Thread-37] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:28:32.495 [Thread-37] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:28:32.632 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:28:32.632 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:28:33.049 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:28:33.050 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:28:33.052 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:28:33.181 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:28:33.182 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:28:33.182 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:28:33.207 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 572 ms
+2026-09-11 10:28:33.248 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:28:33.290 [redisson-netty-20-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:28:33.349 [redisson-netty-20-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:28:34.453 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-7,master} inited
+2026-09-11 10:28:34.454 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:28:34.454 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:28:34.521 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:28:34.812 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@3bb11e0a
+2026-09-11 10:28:34.992 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:28:34.993 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:28:34.994 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:28:34.994 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:28:34.995 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:28:34.996 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:28:34.996 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:28:34.997 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@254f87e4
+2026-09-11 10:28:35.174 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:28:35.214 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:28:35.218 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:28:35.219 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:28:35.223 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.639 seconds (process running for 1157.146)
+2026-09-11 10:28:35.226 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:29:20.253 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-11 10:29:20.256 [Thread-43] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:29:20.256 [Thread-43] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-11 10:29:20.267 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-09-11 10:29:20.272 [Thread-43] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2026-09-11 10:29:20.272 [Thread-43] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-09-11 10:29:20.272 [Thread-43] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-09-11 10:29:20.272 [Thread-43] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-09-11 10:29:20.274 [Thread-43] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource start closing ....
+2026-09-11 10:29:20.275 [Thread-43] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-7} closing ...
+2026-09-11 10:29:20.277 [Thread-43] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-7} closed
+2026-09-11 10:29:20.277 [Thread-43] INFO  c.b.d.d.d.DefaultDataSourceDestroyer - dynamic-datasource close the datasource named [master] success,
+2026-09-11 10:29:20.277 [Thread-43] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource all closed success,bye
+2026-09-11 10:29:20.414 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 19872 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:29:20.414 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:29:20.802 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:29:20.802 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:29:20.804 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:29:20.926 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:29:20.927 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:29:20.927 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:29:20.957 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 541 ms
+2026-09-11 10:29:21.009 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:29:21.064 [redisson-netty-23-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:29:21.174 [redisson-netty-23-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:29:22.497 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-8,master} inited
+2026-09-11 10:29:22.498 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:29:22.498 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:29:22.628 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:29:23.101 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@3d749131
+2026-09-11 10:29:23.182 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:29:23.183 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:29:23.183 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:29:23.183 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:29:23.183 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:29:23.183 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:29:23.183 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:29:23.183 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@370a2506
+2026-09-11 10:29:23.252 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:29:23.278 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:29:23.279 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:29:23.279 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:29:23.283 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 2.915 seconds (process running for 1205.204)
+2026-09-11 10:29:23.284 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-09-11 10:29:32.984 [tomcat-handler-0] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:29:32.984 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:29:32.986 [tomcat-handler-0] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-09-11 10:29:33.056 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:29:33.056 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:29:36.795 [tomcat-handler-1] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 7758520
+2026-09-11 10:29:36.809 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:29:36.809 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:29:48.951 [tomcat-handler-2] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:29:48.958 [tomcat-handler-2] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:29:48.958 [tomcat-handler-2] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:29:49.048 [tomcat-handler-2] INFO  mu.nothingless.security.jwt.JwtUtil - TokenPair 签发 | userId=I_Love_U_So | accessJti=0ff88055-a6d9-4af1-ae64-8839cbd79255 | refreshJti=ce22ab11-b4af-4edb-9aba-0a6a3a04dbb6
+2026-09-11 10:29:49.048 [tomcat-handler-2] INFO  m.n.service.auth.AuthService - 用户 [Shengde] 登录成功
+2026-09-11 10:37:37.174 [restartedMain] INFO  qu.nothingless.MuquApplication - Starting MuquApplication using Java 25.0.1 with PID 14484 (C:\Shengde\Repo\MQ\muqu\target\classes started by yishe1 in C:\Shengde\Repo\MQ)
+2026-09-11 10:37:37.179 [restartedMain] INFO  qu.nothingless.MuquApplication - The following 1 profile is active: "dev"
+2026-09-11 10:37:37.781 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Shengde\maven-repo\com\oracle\database\jdbc\ojdbc11\23.9.0.25.07\ojdbc11-23.9.0.25.07.jar referenced one or more files that do not exist: file:/C:/Shengde/maven-repo/com/oracle/database/jdbc/ojdbc11/23.9.0.25.07/oraclepki.jar
+2026-09-11 10:37:37.782 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-11 10:37:37.783 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-11 10:37:43.542 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-09-11 10:37:43.551 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-09-11 10:37:43.652 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2026-09-11 10:37:47.622 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-09-11 10:37:47.653 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-09-11 10:37:47.653 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-11 10:37:47.787 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 10003 ms
+2026-09-11 10:37:48.441 [restartedMain] INFO  org.redisson.Version - Redisson 4.7.0
+2026-09-11 10:37:49.586 [redisson-netty-1-6] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:37:49.771 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:5201
+2026-09-11 10:37:52.923 [restartedMain] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1,master} inited
+2026-09-11 10:37:52.924 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2026-09-11 10:37:52.925 [restartedMain] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2026-09-11 10:37:54.089 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-09-11 10:37:55.801 [restartedMain] INFO  c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@6ba9b5a1
+2026-09-11 10:37:57.272 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Using default implementation for ThreadExecutor
+2026-09-11 10:37:57.299 [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-09-11 10:37:57.300 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v2.5.2 created.
+2026-09-11 10:37:57.302 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2026-09-11 10:37:57.304 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.5.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-09-11 10:37:57.304 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-09-11 10:37:57.305 [restartedMain] INFO  o.s.s.q.SchedulerFactoryBean$LocalSchedulerFactory - Quartz scheduler version: 2.5.2
+2026-09-11 10:37:57.306 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@49b9326
+2026-09-11 10:37:58.239 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-09-11 10:37:58.442 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-09-11 10:37:58.446 [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2026-09-11 10:37:58.447 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-09-11 10:37:58.467 [restartedMain] INFO  qu.nothingless.MuquApplication - Started MuquApplication in 22.396 seconds (process running for 23.663)
+2026-09-11 10:37:59.766 [RMI TCP Connection(2)-10.69.142.95] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-11 10:37:59.768 [RMI TCP Connection(2)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-09-11 10:37:59.770 [RMI TCP Connection(2)-10.69.142.95] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-09-11 10:38:30.411 [tomcat-handler-0] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:38:30.411 [tomcat-handler-0] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:26.432 [tomcat-handler-1] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:39:26.433 [tomcat-handler-1] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:36.092 [tomcat-handler-2] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:39:36.093 [tomcat-handler-2] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:54.149 [tomcat-handler-3] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:54.165 [tomcat-handler-3] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:39:54.166 [tomcat-handler-3] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:54.275 [tomcat-handler-3] INFO  mu.nothingless.security.jwt.JwtUtil - TokenPair 签发 | userId=I_Love_U_So | accessJti=c0919ad1-1248-4999-a951-12098a1c58ac | refreshJti=bcea6f51-2af9-45f6-b2ee-b4c0613d069f
+2026-09-11 10:39:54.275 [tomcat-handler-3] INFO  m.n.service.auth.AuthService - 用户 [Shengde] 登录成功
+2026-09-11 10:39:58.202 [tomcat-handler-4] WARN  m.n.service.auth.AuthService - 传入的密码是：77585210，加密后：3935b74b12bf607f4d6cd1f4c9ef6985e9d96de090ad835aed745b4b826194dd
+2026-09-11 10:39:58.212 [tomcat-handler-4] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:39:58.213 [tomcat-handler-4] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:39:58.225 [tomcat-handler-4] ERROR m.n.advice.GlobalExceptionHandler - Authentication Service Exception Occurred: 用户名或密码错误
+2026-09-11 10:39:58.228 [tomcat-handler-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误]
+2026-09-11 10:40:09.117 [tomcat-handler-5] WARN  m.n.service.auth.AuthService - 传入的密码是：7758520，加密后：92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:40:09.128 [tomcat-handler-5] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:40:09.128 [tomcat-handler-5] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf
+2026-09-11 10:40:09.136 [tomcat-handler-5] INFO  mu.nothingless.security.jwt.JwtUtil - TokenPair 签发 | userId=I_Love_U_So | accessJti=3692d1f0-51f5-4941-8310-b45b275e4e74 | refreshJti=a4ab7887-ad89-44ea-8909-92abf273596d
+2026-09-11 10:40:09.137 [tomcat-handler-5] INFO  m.n.service.auth.AuthService - 用户 [Shengde] 登录成功
+2026-09-11 10:40:21.418 [tomcat-handler-6] INFO  m.n.controller.TestController - Login attempt for userAccount: Shengde, password: 7758520
+2026-09-11 10:40:21.424 [tomcat-handler-6] INFO  m.n.s.user.impl.UserServiceImpl - UserEntity(id=2098225117521481730, userAccount=Shengde, userId=I_Love_U_So, myEmail=null, phone=v1:Y3yuq79LHxdfdmW/:YnGx131lh9HjphShP+ZDXnpmzJKQTokPwCQz, phoneIndex=kSoYYaaSkuaS_Y_iu_rv_orvaeeaL___, employeeId=null, firstName=null, lastName=null, fullName=null, passwordHash=92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf, status=ACTIVE, lockedUntil=null, passwordExpiresAt=null, failedAttempts=0, myRoles=[], myProfiles={}, myVersion=0, deleted=0, createdAt=2026-09-11T09:40:25.815118, updatedAt=2026-09-11T09:40:25.815118, createdBy=system, updatedBy=system, tenantId=1, myKey=null, myKey1=null, myKey2=null, myKey3=null, myKey4=null, myKey5=null, myKey6=null)
+2026-09-11 10:40:21.424 [tomcat-handler-6] ERROR m.n.s.user.impl.UserServiceImpl - User's password is 92464857618ca11f881f955ab73214abeea4ce2a3b445abbe2d57eae5a45ffdf

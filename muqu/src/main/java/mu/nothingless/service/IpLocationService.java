@@ -14,12 +14,32 @@ public class IpLocationService {
     private final Searcher ipv6Searcher;
 
     public IpLocationService() {
+        Searcher v4 = null;
+        Searcher v6 = null;
+        Throwable v4Err = null;
+        Throwable v6Err = null;
+
         try {
-            this.ipv4Searcher = loadSearcher("ip2region/ip2region_v4.xdb");
-            this.ipv6Searcher = loadSearcher("ip2region/ip2region_v6.xdb");
+            v4 = loadSearcher("ip2region/ip2region_v4.xdb");
         } catch (Exception e) {
-            throw new IllegalStateException("加载 ip2region IPv4/IPv6 数据库失败", e);
+            v4Err = e;
         }
+        try {
+            v6 = loadSearcher("ip2region/ip2region_v6.xdb");
+        } catch (Exception e) {
+            v6Err = e;
+        }
+
+        // 异常链带上，别只抛一句看不懂的话
+        if (v4 == null) {
+            throw new IllegalStateException("加载 IPv4 库失败，请检查 ip2region_v4.xdb 是否为完整二进制文件", v4Err);
+        }
+        if (v6 == null) {
+            throw new IllegalStateException("加载 IPv6 库失败，请检查 ip2region_v6.xdb 是否为完整二进制文件", v6Err);
+        }
+
+        this.ipv4Searcher = v4;   // 单次赋值，final 也认
+        this.ipv6Searcher = v6;
     }
 
     public String getCity(String ip) {

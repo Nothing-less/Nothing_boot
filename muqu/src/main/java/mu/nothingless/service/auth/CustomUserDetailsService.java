@@ -2,10 +2,9 @@ package mu.nothingless.service.auth;
 
 import lombok.RequiredArgsConstructor;
 import mu.nothingless.entity.UserEntity;
-import mu.nothingless.enums.AccountStatus;
+import mu.nothingless.entity.enums.AccountStatus;
 import mu.nothingless.service.user.UserService;
-import mu.nothingless.utils.BcryptUtil;
-
+import mu.nothingless.utils.HmacSha256Util;
 
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final BcryptUtil bcrypt;
+    private final HmacSha256Util hmacSha256Util;
     private final UserService userService;
 
     @Override
@@ -35,7 +34,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return User.builder()
                 .username(user.getUserId()) // 用 userId 作为 principal
-                .password(user.getPasswordHash()) // 数据库存的 BCrypt 密文
+                .password(user.getPasswordHash()) // 数据库存的 SHA256 密文
                 .accountLocked(user.getStatus() != AccountStatus.ACTIVE)
                 .authorities(user.getMyRoles() != null
                         ? user.getMyRoles().stream()
@@ -56,7 +55,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return User.builder()
                 .username("admin")
-                .password(bcrypt.encode("123456")) // BCrypt
+                .password(hmacSha256Util.encryptToString("123456")) // HMAC-SHA256
                 .roles("ADMIN")
                 .build();
     }

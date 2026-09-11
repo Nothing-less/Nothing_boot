@@ -3,7 +3,7 @@ package mu.nothingless.service.user.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.dto.mapping.UserConvertor;
-import mu.nothingless.dto.request.UserCreateRequest;
+import mu.nothingless.dto.UserCreateRequest;
 import mu.nothingless.entity.UserEntity;
 import mu.nothingless.mapper.UserMapper;
 import mu.nothingless.service.user.UserService;
@@ -60,9 +60,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
             entity.setPhone(aesGcmUtil.encryptToString(entity.getPhone()));
             entity.setPhoneIndex(hmacSha256Util.encryptToString(entity.getPhone()));
         }
-        entity.setPasswordHash(hmacSha256Util.encrypt(request.getPassword()));
+        entity.setPasswordHash(hmacSha256Util.encryptToString(request.getPassword()));
         entity.setFailedAttempts(0);
-        entity.setStatus(mu.nothingless.enums.AccountStatus.ACTIVE);
+        entity.setStatus(mu.nothingless.entity.enums.AccountStatus.ACTIVE);
         save(entity);
         log.info("用户创建成功 | userId={} | tenantId={}", entity.getUserId(), entity.getTenantId());
         return entity;

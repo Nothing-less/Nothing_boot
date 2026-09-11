@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * HMAC-SHA256 盲索引生成器（企业级）
@@ -18,10 +16,10 @@ import java.security.NoSuchAlgorithmException;
  * <p>
  * <b>安全特性：</b>
  * <ul>
- *   <li>使用 HMAC-SHA256（带密钥），抵御彩虹表与暴力破解</li>
- *   <li>密钥强制外部注入，禁止硬编码；启动时校验长度</li>
- *   <li>每次计算独立创建 Mac 实例，天然线程安全</li>
- *   <li>异常不吞没，但不向上层暴露敏感堆栈细节</li>
+ * <li>使用 HMAC-SHA256（带密钥），抵御彩虹表与暴力破解</li>
+ * <li>密钥强制外部注入，禁止硬编码；启动时校验长度</li>
+ * <li>每次计算独立创建 Mac 实例，天然线程安全</li>
+ * <li>异常不吞没，但不向上层暴露敏感堆栈细节</li>
  * </ul>
  */
 @Slf4j
@@ -50,12 +48,11 @@ public class HmacSha256Util {
     public void validateConfig() {
         if (secretKey == null || secretKey.length() < MIN_KEY_LENGTH) {
             throw new IllegalStateException(
-                "【安全错误】security.blind-index.key 未配置或长度不足 " + MIN_KEY_LENGTH +
-                "。请检查 application.yml / 环境变量，切勿使用默认密钥上生产！"
-            );
+                    "【安全错误】security.blind-index.key 未配置或长度不足 " + MIN_KEY_LENGTH +
+                            "。请检查 application.yml / 环境变量，切勿使用默认密钥上生产！");
         }
         // log.debug("HmacSha256Util 初始化完成，算法：{}，截断长度：{}",
-        //          ALGORITHM, truncateLength > 0 ? truncateLength : "无截断");
+        // ALGORITHM, truncateLength > 0 ? truncateLength : "无截断");
     }
 
     /**
@@ -66,7 +63,7 @@ public class HmacSha256Util {
      * @throws IllegalArgumentException 输入为空时抛出
      * @throws IllegalStateException    计算失败时抛出
      */
-    public String hash(String plainText) {
+    private String hash(String plainText) {
         if (plainText == null || plainText.isBlank()) {
             throw new IllegalArgumentException("盲索引明文不能为空");
         }
@@ -74,7 +71,7 @@ public class HmacSha256Util {
         try {
             Mac mac = Mac.getInstance(ALGORITHM);
             SecretKeySpec keySpec = new SecretKeySpec(
-                secretKey.getBytes(StandardCharsets.UTF_8), ALGORITHM);
+                    secretKey.getBytes(StandardCharsets.UTF_8), ALGORITHM);
             mac.init(keySpec);
 
             byte[] hashBytes = mac.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
@@ -94,6 +91,9 @@ public class HmacSha256Util {
         return hash(plainText);
     }
 
+    public String encrypt(String plainText) {
+        return hash(plainText);
+    }
 
     private static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
@@ -105,40 +105,42 @@ public class HmacSha256Util {
         return new String(hexChars);
     }
 
-        
     /**
      * 将字符串进行 SHA256 加密
+     * 
      * @param input 原始字符串（UTF-8编码）
      * @return 64位十六进制密文（小写）
+     * 
+     *         public String encrypt(String input) {
+     *         if (input == null || input.isEmpty()) {
+     *         return null;
+     *         }
+     * 
+     *         try {
+     *         MessageDigest digest = MessageDigest.getInstance("SHA-256");
+     *         byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+     * 
+     *         // 转换为十六进制字符串
+     *         StringBuilder hexString = new StringBuilder();
+     *         for (byte b : hash) {
+     *         String hex = Integer.toHexString(0xff & b);
+     *         if (hex.length() == 1) {
+     *         hexString.append('0');
+     *         }
+     *         hexString.append(hex);
+     *         }
+     * 
+     *         return hexString.toString();
+     * 
+     *         } catch (NoSuchAlgorithmException e) {
+     *         throw new RuntimeException("SHA-256 算法不可用", e);
+     *         }
+     *         }
      */
-    public String encrypt(String input) {
-        if (input == null || input.isEmpty()) {
-            return null;
-        }
-        
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
-            
-            // 转换为十六进制字符串
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) {
-                    hexString.append('0');
-                }
-                hexString.append(hex);
-            }
-            
-            return hexString.toString();
-            
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("SHA-256 算法不可用", e);
-        }
-    }
-    
+
     /**
      * 验证密码（比较两个密文是否一致）
+     * 
      * @param input
      * @param stored
      * @return 是否匹配
@@ -149,5 +151,5 @@ public class HmacSha256Util {
         }
         return input.equalsIgnoreCase(stored);
     }
-    
+
 }

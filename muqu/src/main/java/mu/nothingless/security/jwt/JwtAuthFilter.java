@@ -9,9 +9,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mu.nothingless.advice.RetResult;
 import mu.nothingless.exceptions.TokenException;
 import mu.nothingless.security.UserContext;
-import mu.nothingless.utils.RetResult;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;

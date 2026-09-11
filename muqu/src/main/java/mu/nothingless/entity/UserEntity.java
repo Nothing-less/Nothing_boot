@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import mu.nothingless.enums.AccountStatus;
+import mu.nothingless.entity.enums.AccountStatus;
 import mu.nothingless.handler.AesTypeHandler;
 import mu.nothingless.handler.PgJsonbTypeHandler;
 

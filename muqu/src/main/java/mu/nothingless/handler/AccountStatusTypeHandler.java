@@ -1,10 +1,11 @@
 package mu.nothingless.handler;
 
 
-import mu.nothingless.enums.AccountStatus;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
+
+import mu.nothingless.entity.enums.AccountStatus;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

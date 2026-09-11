@@ -2,20 +2,19 @@ package mu.nothingless.service.auth;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import mu.nothingless.dto.request.LoginRequest;
-import mu.nothingless.dto.response.AccessTokenResponse;
-import mu.nothingless.dto.response.TokenPairResponse;
+import mu.nothingless.advice.RetResult;
+import mu.nothingless.dto.LoginRequest;
 import mu.nothingless.exceptions.BusinessException;
 import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
-import mu.nothingless.utils.RetResult;
+import mu.nothingless.utils.HmacSha256Util;
+import mu.nothingless.vo.AccessTokenResponse;
+import mu.nothingless.vo.TokenPairResponse;
 
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import java.util.concurrent.TimeUnit;
 import io.jsonwebtoken.Claims;
 
 @Slf4j
@@ -26,8 +25,10 @@ public class AuthService {
     private final AuthenticationManager authManager;
     private final JwtUtil jwtUtil;
     private final JwtProperties jwtProperties;
+    private final HmacSha256Util hmacSha256Util;
 
     public TokenPairResponse login(LoginRequest request) {
+
         Authentication authentication = authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.userAccount(), request.password()));
 

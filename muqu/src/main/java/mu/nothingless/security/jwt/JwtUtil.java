@@ -6,6 +6,9 @@ import io.jsonwebtoken.security.SecureDigestAlgorithm;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.exceptions.TokenException;
+import mu.nothingless.security.cache.TokenClaims;
+import mu.nothingless.security.cache.TokenStore;
+import mu.nothingless.security.cache.TokenTypeEnum;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;

@@ -8,10 +8,10 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
 
-import mu.nothingless.dto.request.UserCreateRequest;
-import mu.nothingless.dto.request.UserUpdateRequest;
-import mu.nothingless.dto.response.UserResponse;
+import mu.nothingless.dto.UserCreateRequest;
+import mu.nothingless.dto.UserUpdateRequest;
 import mu.nothingless.entity.UserEntity;
+import mu.nothingless.vo.UserResponse;
 
 import java.util.HashSet;
 import java.util.Set;
