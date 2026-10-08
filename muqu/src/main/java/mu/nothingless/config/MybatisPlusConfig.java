@@ -16,6 +16,8 @@ import mu.nothingless.utils.AesGcmUtil;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
 
+import java.util.Set;
+
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +25,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MybatisPlusConfig {
 
+     /** 不参与租户隔离的表，小写 */
+    private static final Set<String> TENANT_IGNORE_TABLES = Set.of(
+            "t_product"
+            // "t_order", "t_dict"
+            ,"sys_config"
+            ,"sys_dict"
+    );
+/*
     @Bean
     ConfigurationCustomizer typeHandlerConfigurationCustomizer(AesGcmUtil aesGcmUtil) {
         return configuration -> {
@@ -32,7 +42,15 @@ public class MybatisPlusConfig {
                     JdbcType.VARCHAR,
                     new AesTypeHandler(aesGcmUtil));
         };
+
+        return configuration -> {
+            // 只把实例登记进 allTypeHandlersMap，不绑定 (String, VARCHAR)
+            configuration.getTypeHandlerRegistry().register(new AesTypeHandler(aesGcmUtil));
+        };
     }
+ */
+
+
 
     /**
      * 插件配置：分页 + 乐观锁 + 多租户 + 动态表名 + 防全表更新删除
@@ -76,7 +94,13 @@ public class MybatisPlusConfig {
             @Override
             public boolean ignoreTable(String tableName) {
                 // 忽略不需要租户隔离的表
-                return "sys_config".equals(tableName) || "sys_dict".equals(tableName);
+                // tableName 可能带 schema 或引号，统一小写并剥掉前缀
+                String t = tableName.toLowerCase();
+                int dot = t.lastIndexOf('.');
+                if (dot >= 0) {
+                    t = t.substring(dot + 1);
+                }
+                return TENANT_IGNORE_TABLES.contains(t.replace("\"", ""));
             }
         };
     }

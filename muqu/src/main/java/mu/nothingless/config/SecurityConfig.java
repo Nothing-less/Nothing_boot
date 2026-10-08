@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.BCryptVersion;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -42,7 +43,7 @@ public class SecurityConfig {
 
                         .requestMatchers("/admin/**").hasAuthority("ADMIN") // ADMIN 角色才能访问 /admin/**
                         .requestMatchers("/user/**").hasAnyAuthority("USER", "ADMIN") // USER 或 ADMIN 角色才能访问 /user/**
-                        .requestMatchers("/api/test/**").permitAll() // 测试接口允许所有访问
+                        .requestMatchers("/api/**").permitAll() // 测试接口允许所有访问
                         .anyRequest().authenticated() // 其他接口需要登录
                 )
                 
@@ -55,6 +56,10 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(BCryptVersion.$2B, 12); // strength=12
+    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {

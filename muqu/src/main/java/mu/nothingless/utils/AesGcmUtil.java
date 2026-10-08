@@ -6,6 +6,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.exceptions.CryptoException;
 
 import java.nio.ByteBuffer;
@@ -21,6 +22,7 @@ import java.util.Base64;
  * - 每次加密随机 12 字节 IV
  * - 输出格式：v1:<base64(iv)>:<base64(ciphertext+tag)>
  */
+@Slf4j
 public final class AesGcmUtil {
 
     private static final String ALGORITHM = "AES/GCM/NoPadding";
@@ -89,7 +91,7 @@ public final class AesGcmUtil {
                 + Base64.getEncoder().encodeToString(ct);
     }
 
-    public byte[] encrypt(byte[] plaintext) {
+    private byte[] encrypt(byte[] plaintext) {
         try {
             byte[] iv = new byte[IV_BYTES];
             secureRandom.nextBytes(iv);
@@ -105,9 +107,9 @@ public final class AesGcmUtil {
         }
     }
 
-    public String decryptToString(String token) {
+    public String decryptToString(String string) {
         try {
-            String[] parts = token.split("\\" + SEP);
+            String[] parts = string.split("\\" + SEP);
             if (parts.length != 3 || !VERSION.equals(parts[0])) {
                 throw new CryptoException("Invalid ciphertext format", null);
             }
@@ -126,7 +128,7 @@ public final class AesGcmUtil {
         }
     }
 
-    public byte[] decrypt(byte[] ivAndCipher) {
+    private byte[] decrypt(byte[] ivAndCipher) {
         try {
             byte[] iv = extractIv(ivAndCipher);
             byte[] ct = new byte[ivAndCipher.length - IV_BYTES];
@@ -149,4 +151,5 @@ public final class AesGcmUtil {
         System.arraycopy(ivAndCipher, 0, iv, 0, IV_BYTES);
         return iv;
     }
+
 }

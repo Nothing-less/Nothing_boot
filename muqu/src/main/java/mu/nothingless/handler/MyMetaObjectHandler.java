@@ -23,9 +23,17 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
         this.strictInsertFill(metaObject, "createdAt", LocalDateTime.class, now);
         this.strictInsertFill(metaObject, "updatedAt", LocalDateTime.class, now);
+
+        this.strictInsertFill(metaObject, "productUpdatedAt", LocalDateTime.class, now);
+        this.strictInsertFill(metaObject, "productCreatedAt", LocalDateTime.class, now);
+
         this.strictInsertFill(metaObject, "deleted", Integer.class, 0);
+        this.strictInsertFill(metaObject, "is_deleted", Integer.class, 0);
+
         this.strictInsertFill(metaObject, "failedAttempts", Integer.class, 0);
+
         this.strictInsertFill(metaObject, "myVersion", Integer.class, 0);
+        this.strictInsertFill(metaObject, "version", Integer.class, 0);
 
         String operator = getCurrentUsername();
         this.strictInsertFill(metaObject, "createdBy", String.class, operator);
@@ -33,13 +41,21 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
         Long tenantId = getCurrentTenantId();
         this.strictInsertFill(metaObject, "tenantId", Long.class, tenantId);
+        
+
+
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
         log.debug("自动填充 UPDATE 字段 | target={}", metaObject.getOriginalObject().getClass().getSimpleName());
+
         this.strictUpdateFill(metaObject, "updatedAt", LocalDateTime.class, LocalDateTime.now());
+
         this.strictUpdateFill(metaObject, "updatedBy", String.class, getCurrentUsername());
+        
+        this.strictInsertFill(metaObject, "productUpdatedAt", LocalDateTime.class, LocalDateTime.now());
+    
     }
 
     private String getCurrentUsername() {

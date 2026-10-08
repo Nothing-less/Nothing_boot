@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import mu.nothingless.entity.UserEntity;
 import mu.nothingless.entity.enums.AccountStatus;
 import mu.nothingless.service.user.UserService;
-import mu.nothingless.utils.HmacSha256Util;
 
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final HmacSha256Util hmacSha256Util;
     private final UserService userService;
 
     @Override
@@ -44,19 +42,4 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .build();
     }
 
-    public UserDetails _loadUserByUsername(String userAccount) throws UsernameNotFoundException {
-        // UserEntity user = userMapper.findByUsername(userAccount);
-        // if (user == null) throw new UsernameNotFoundException("用户不存在");
-
-        // 临时写死用于测试，后续替换为数据库查询
-        if (!"admin".equals(userAccount)) {
-            throw new UsernameNotFoundException("用户不存在");
-        }
-
-        return User.builder()
-                .username("admin")
-                .password(hmacSha256Util.encryptToString("123456")) // HMAC-SHA256
-                .roles("ADMIN")
-                .build();
-    }
 }

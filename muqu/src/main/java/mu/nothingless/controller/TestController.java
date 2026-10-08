@@ -9,18 +9,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mu.nothingless.config.SpringContextHolder;
 import mu.nothingless.dto.LoginRequest;
 import mu.nothingless.dto.UserCreateRequest;
 import mu.nothingless.entity.UserEntity;
 import mu.nothingless.service.user.UserService;
+import mu.nothingless.utils.AesGcmUtil;
+
 
 @Slf4j
 @RestController
@@ -34,7 +36,7 @@ public class TestController {
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/getAll")
-    public List getAllUser() {
+    public List<?> getAllUser() {
         return userService.getAllUser();
     }
 
@@ -62,5 +64,11 @@ public class TestController {
                 "matches   = " + passwordEncoder.matches(request.password(), db),
                 "reEncode  = " + passwordEncoder.encode(request.password()) // 对比下格式前缀
         );
+    }
+
+	@PostConstruct
+    public void logKeyFingerprint() {
+        AesGcmUtil u = SpringContextHolder.getBean(AesGcmUtil.class);
+        log.info("Test decrypt 3: "+u.decryptToString("v1:Z9NR848xdk+aOd8W:h5Lm3SUoSzhn47WEK7KJGj6CNpmDg4Dlk9pK"));
     }
 }

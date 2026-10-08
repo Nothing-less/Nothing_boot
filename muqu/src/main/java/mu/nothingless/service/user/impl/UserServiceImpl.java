@@ -10,14 +10,18 @@ import mu.nothingless.service.user.UserService;
 import mu.nothingless.utils.AesGcmUtil;
 import mu.nothingless.utils.HmacSha256Util;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.spring.service.impl.ServiceImpl;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.Vector;
@@ -29,9 +33,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
     private final UserMapper userMapper;
     private final UserConvertor userConvertor;
-    
+
     private final AesGcmUtil aesGcmUtil;
     private final HmacSha256Util hmacSha256Util;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public Optional<UserEntity> findByUserId(String userId) {
@@ -40,14 +45,25 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
     @Override
     public Optional<UserEntity> findByUserAccount(String userAccount) {
-        Optional<UserEntity> user = userMapper.selectByUserAccount(userAccount);
-        if(user.isPresent()){
-            var userEntity = user.get();
+        List<UserEntity> user = userMapper.selectByUserAccount(userAccount);
+        if (!user.isEmpty()) {
+            var userEntity = user.get(0);
             log.info(userEntity.toString());
             String pwd = userEntity.getPasswordHash(); // 获取密码哈希
-            log.error("User's password is {}",pwd);
+            log.error("User's password is {}", pwd);
         }
-        return user;
+        return user.isEmpty() ? Optional.empty() : Optional.of(user.get(0));
+    }
+
+    @Transactional
+    public UserEntity register(UserCreateRequest request) {
+
+        String username = request.getUserAccount();
+        UserEntity exists = findByUserAccount(username).orElse(null);
+        if (exists != null) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "用户名已存在");
+        }
+        return createUser(request);
     }
 
     @Override
@@ -57,10 +73,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         UserEntity entity = userConvertor.toEntity(request);
 
         if (StringUtils.hasText(entity.getPhone())) {
-            entity.setPhone(aesGcmUtil.encryptToString(entity.getPhone()));
-            entity.setPhoneIndex(hmacSha256Util.encryptToString(entity.getPhone()));
+            String plainPhone = entity.getPhone();
+            entity.setPhoneIndex(hmacSha256Util.encryptToString(plainPhone)); // 先用明文算索引
+            entity.setPhone(aesGcmUtil.encryptToString(plainPhone));           // 再覆盖为密文
         }
-        entity.setPasswordHash(hmacSha256Util.encryptToString(request.getPassword()));
+        entity.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         entity.setFailedAttempts(0);
         entity.setStatus(mu.nothingless.entity.enums.AccountStatus.ACTIVE);
         save(entity);
@@ -94,7 +111,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         Vector<UserEntity> retUserList = new Vector<>();
         try {
             var all_user_list = list();
-            if(all_user_list.isEmpty()){
+            // var all_user_list = userMapper.selectAll();
+            if (all_user_list.isEmpty()) {
                 return retUserList;
             }
             retUserList.addAll(all_user_list);

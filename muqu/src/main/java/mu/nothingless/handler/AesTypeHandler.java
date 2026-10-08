@@ -5,7 +5,6 @@ import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.config.SpringContextHolder;
 import mu.nothingless.utils.AesGcmUtil;
@@ -22,20 +21,41 @@ import java.sql.SQLException;
 @Slf4j
 @MappedTypes(String.class)
 @MappedJdbcTypes(JdbcType.VARCHAR)
-@RequiredArgsConstructor
 public class AesTypeHandler extends BaseTypeHandler<String> {
 
     /** 解密失败时的占位符 */
     private static final String DECRYPT_FAILED_PLACEHOLDER = "***DECRYPT_FAILED***";
 
-    private final AesGcmUtil aesUtil;
+    private volatile AesGcmUtil aesUtil;
 
     /**
      * 无参构造器：通过 Spring 上下文获取 AesGcmUtil
      * 若 Spring 上下文未就绪（极早期初始化），将抛出 IllegalStateException 快速失败。
      */
     public AesTypeHandler() {
-        this.aesUtil = SpringContextHolder.getBean(AesGcmUtil.class);
+    }
+
+    /** 供单元测试或非 Spring 环境显式传入 */
+    public AesTypeHandler(AesGcmUtil aesUtil) {
+        this.aesUtil = aesUtil;
+    }
+
+    /**
+     * 延迟到第一次真正加解密时才从容器取。此时容器必定已就绪。
+     * volatile + 双检锁：TypeHandler 是单例且必须线程安全。
+     */
+    private AesGcmUtil aesUtil() {
+        AesGcmUtil ref = aesUtil;
+        if (ref == null) {
+            synchronized (this) {
+                ref = aesUtil;
+                if (ref == null) {
+                    ref = SpringContextHolder.getBean(AesGcmUtil.class);
+                    aesUtil = ref;
+                }
+            }
+        }
+        return ref;
     }
 
     @Override
@@ -64,7 +84,7 @@ public class AesTypeHandler extends BaseTypeHandler<String> {
 
     public String decrypt(String cipherText) throws SQLException {
         try {
-            return aesUtil.decryptToString(cipherText);
+            return aesUtil().decryptToString(cipherText);
         } catch (Exception e) {
             throw new SQLException("AES decryptString failed", e);
         }
@@ -72,7 +92,7 @@ public class AesTypeHandler extends BaseTypeHandler<String> {
 
     public String encrypt(String plainText) throws SQLException {
         try {
-            return aesUtil.encryptToString(plainText);
+            return aesUtil().encryptToString(plainText);
         } catch (Exception e) {
             throw new SQLException("AES encryptString failed", e);
         }
@@ -86,7 +106,7 @@ public class AesTypeHandler extends BaseTypeHandler<String> {
             return null;
         }
         try {
-            return aesUtil.decryptToString(cipherText);
+            return aesUtil().decryptToString(cipherText);
         } catch (Exception e) {
             log.error("AES decrypt failed, column: {}, cipherText prefix: {}",
                     columnRef,
@@ -95,6 +115,8 @@ public class AesTypeHandler extends BaseTypeHandler<String> {
             return DECRYPT_FAILED_PLACEHOLDER;
         }
     }
+
+    
 
     /**
      * return true if descrypt failed

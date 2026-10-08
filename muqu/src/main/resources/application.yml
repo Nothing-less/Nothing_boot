@@ -1,6 +1,20 @@
 server:
   port: 8081
 
+  shutdown: graceful            # 优雅停机，容器无关
+  jetty:
+    threads:
+      min: 10                   # 常驻线程
+      max: 200                  # 最大工作线程（默认 200）
+      idle-timeout: 60000       # 空闲线程回收，ms
+    connection-idle-timeout: 30000
+    max-http-form-post-size: 10MB
+    accesslog:
+      enabled: true
+      filename: C:/Shengde/Repo/MQ/muqu/logs/jetty-access.log   # 不配置则输出到 System.err
+      file-date-format: .yyyy-MM-dd              # 按天轮转
+      retention-period: 31                       # 保留天数
+      custom-format: true                          # 记录处理耗时
 spring:
   application:
     name: muqu
@@ -13,7 +27,6 @@ spring:
   threads:
     virtual:
       enabled: true  # 开启虚拟线程
-
 
   data:
     redis:
@@ -139,6 +152,6 @@ mybatis-plus:
       table-prefix: sys_
   mapper-locations: classpath*:/mapper/**/*.xml
   type-aliases-package: mu.nothingless.entity
-  type-handlers-package: mu.nothingless.handler
-  type-enums-package: mu.nothingless.enums
+  # type-handlers-package: mu.nothingless.handler
+  # type-enums-package: mu.nothingless.entity.enums, qu.nothingless.entity.enums
 

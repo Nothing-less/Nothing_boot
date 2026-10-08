@@ -7,7 +7,6 @@ import mu.nothingless.dto.LoginRequest;
 import mu.nothingless.exceptions.BusinessException;
 import mu.nothingless.security.jwt.JwtProperties;
 import mu.nothingless.security.jwt.JwtUtil;
-import mu.nothingless.utils.HmacSha256Util;
 import mu.nothingless.vo.AccessTokenResponse;
 import mu.nothingless.vo.TokenPairResponse;
 
@@ -25,7 +24,6 @@ public class AuthService {
     private final AuthenticationManager authManager;
     private final JwtUtil jwtUtil;
     private final JwtProperties jwtProperties;
-    private final HmacSha256Util hmacSha256Util;
 
     public TokenPairResponse login(LoginRequest request) {
 
