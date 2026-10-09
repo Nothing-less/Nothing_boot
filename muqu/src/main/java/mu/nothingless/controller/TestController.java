@@ -44,7 +44,7 @@ public class TestController {
     public UserEntity doLogin(@RequestBody @Valid LoginRequest request) {
         String userAccount = request.userAccount();
         String password = request.password();
-        log.info("Login attempt for userAccount: {}, password: {}", userAccount, password);
+        // log.info("Login attempt for userAccount: {}, password: {}", userAccount, password);
         return userService.findByUserAccount(userAccount).orElse(null);
     }
 

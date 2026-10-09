@@ -23,7 +23,7 @@ import qu.nothingless.entity.enums.ProductStatusEnum;
 @TableName("t_product")
 public class ProductEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 10086L;
 
     @JsonSerialize(using = ToStringSerializer.class)
     @TableId(value = "product_id", type = IdType.ASSIGN_ID)

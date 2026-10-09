@@ -50,7 +50,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
             var userEntity = user.get(0);
             log.info(userEntity.toString());
             String pwd = userEntity.getPasswordHash(); // 获取密码哈希
-            log.error("User's password is {}", pwd);
         }
         return user.isEmpty() ? Optional.empty() : Optional.of(user.get(0));
     }

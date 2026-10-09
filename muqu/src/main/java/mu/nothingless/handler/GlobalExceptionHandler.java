@@ -6,7 +6,11 @@ import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import mu.nothingless.advice.RetResult;
 import mu.nothingless.exceptions.BusinessException;
+import qu.nothingless.exceptions.CartException;
 
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,6 +26,12 @@ public class GlobalExceptionHandler {
         log.error("Business Service Exception Occurred:       \n", e);
         return RetResult.error(e.getCode(), e.getMessage());
     }
+    
+    @ExceptionHandler(CartException.class)
+    public ResponseEntity<Map<String, String>> onCartException(CartException e) {
+        return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));
+    }
+
 
     @ExceptionHandler(RuntimeException.class)
     public RetResult<Void> handleRuntimeException(RuntimeException e) {
