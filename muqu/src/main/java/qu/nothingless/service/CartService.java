@@ -6,15 +6,21 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
+import mu.nothingless.security.UserContext;
+import qu.nothingless.dto.AddItemRequest;
+import qu.nothingless.dto.CartView;
 import qu.nothingless.entity.CartItem;
 import qu.nothingless.exceptions.CartException;
+import qu.nothingless.vo.CartItemVO;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -133,6 +139,101 @@ public class CartService {
     public CartService(StringRedisTemplate redis, RedissonClient redisson) {
         this.redis = redis;
         this.redisson = redisson;
+    }
+
+    // ============ 当前请求用例 ============
+
+    public CartView getCurrentCart(String guestToken) {
+        Long userId = currentUserId();
+        return CartView.of(userId == null
+                ? listGuest(guestToken)
+                : list(userId));
+    }
+
+    public Map<String, Object> getCurrentSummary() {
+        Long userId = currentUserId();
+        if (userId == null) {
+            return Map.of("quantity", 0, "types", 0L, "total", BigDecimal.ZERO);
+        }
+        return Map.of(
+                "quantity", totalQuantity(userId),
+                "types", typeCount(userId),
+                "total", total(userId));
+    }
+
+    public CartItemVO addCurrentItem(AddItemRequest request) {
+        if (request == null) {
+            throw new CartException("加购请求不能为空");
+        }
+        if (request.skuId() == null) {
+            throw new CartException("SKU 编号不能为空");
+        }
+        if (request.price() == null || request.price().signum() < 0) {
+            throw new CartException("商品价格不能为空或负数");
+        }
+        if (request.quantity() < 1 || request.quantity() > MAX_QUANTITY_PER_SKU) {
+            throw new CartException("加购数量必须在 1 到 " + MAX_QUANTITY_PER_SKU + " 之间");
+        }
+
+        CartItem incoming = CartItem.of(String.valueOf(request.skuId()), request.productId(),
+                request.title(), request.image(), request.price(), request.quantity());
+        Long userId = currentUserId();
+        CartItem added = userId == null
+                ? addGuestItem(request.guestToken(), incoming)
+                : addItem(userId, incoming);
+        return CartItemVO.from(added);
+    }
+
+    public void updateCurrentQuantity(Long skuId, int quantity) {
+        Long userId = requireCurrentUserId();
+        if (skuId == null) {
+            throw new CartException("SKU 编号不能为空");
+        }
+        if (quantity < 1 || quantity > MAX_QUANTITY_PER_SKU) {
+            throw new CartException("商品数量必须在 1 到 " + MAX_QUANTITY_PER_SKU + " 之间");
+        }
+        updateQuantity(userId, skuId, quantity);
+    }
+
+    public void setCurrentSelected(Long skuId, boolean selected) {
+        Long userId = requireCurrentUserId();
+        if (skuId == null) {
+            throw new CartException("SKU 编号不能为空");
+        }
+        setSelected(userId, skuId, selected);
+    }
+
+    public void selectAllForCurrentUser(boolean selected) {
+        selectAll(requireCurrentUserId(), selected);
+    }
+
+    public void removeCurrentItem(Long skuId) {
+        Long userId = requireCurrentUserId();
+        if (skuId == null) {
+            throw new CartException("SKU 编号不能为空");
+        }
+        removeItem(userId, skuId);
+    }
+
+    public void clearCurrentCart() {
+        clear(requireCurrentUserId());
+    }
+
+    public Map<String, Integer> mergeCurrentGuestCart(String guestToken) {
+        return Map.of("merged", mergeGuestCart(guestToken, requireCurrentUserId()));
+    }
+
+    private static Long currentUserId() {
+        String currentUserId = UserContext.getCurrentUserId();
+        return currentUserId == null ? null : Long.valueOf(currentUserId);
+    }
+
+    private static Long requireCurrentUserId() {
+        Long userId = currentUserId();
+        if (userId == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        }
+        return userId;
     }
 
     // ============ 写操作 ============

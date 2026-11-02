@@ -1,0 +1,202 @@
+### ==========================================================
+### CartController 接口测试 (IDEA HTTP Client)
+### DTO: AddItemRequest(skuId, productId, title, image, price, quantity, guestToken)
+### 约束: skuId @NotNull | price @NotNull | quantity @Min(1)@Max(999)
+### ==========================================================
+
+@baseUrl = http://localhost:8081
+@token = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMDAxIn0.replace_me
+@guestToken = guest-token-001
+@skuId = 10001
+
+### ---------- 1. 购物车列表 + 合计（登录态） ----------
+GET {{baseUrl}}/api/cart
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### ---------- 1b. 购物车列表（游客态，走 X-Guest-Token） ----------
+GET {{baseUrl}}/api/cart
+X-Guest-Token: {{guestToken}}
+Accept: application/json
+
+### ---------- 1c. 游客态且无 token（应返回空列表） ----------
+GET {{baseUrl}}/api/cart
+Accept: application/json
+
+### ---------- 2. 汇总信息 quantity / types / total ----------
+GET {{baseUrl}}/api/cart/summary
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### ---------- 3. 加购（登录态） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": 10001,
+  "productId": 2001,
+  "title": "示例商品 SKU-10001",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": 129.90,
+  "quantity": 2,
+  "guestToken": null
+}
+
+### ---------- 3b. 加购（游客态，guestToken 必填） ----------
+POST {{baseUrl}}/api/cart/items
+Content-Type: application/json
+
+{
+  "skuId": 10001,
+  "productId": 2001,
+  "title": "示例商品 SKU-10001",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": 129.90,
+  "quantity": 2,
+  "guestToken": "{{guestToken}}"
+}
+
+### ---------- 3c. 加购 最小必填（productId/title/image/guestToken 全省略，DTO 无约束） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": 10002,
+  "price": 9.90,
+  "quantity": 1
+}
+
+### ---------- 3d. 异常用例：quantity = 0（违反 @Min(1)，应 400） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": 10001,
+  "productId": 2001,
+  "title": "示例商品",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": 129.90,
+  "quantity": 0,
+  "guestToken": null
+}
+
+### ---------- 3e. 异常用例：quantity = 1000（违反 @Max(999)，应 400） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": 10001,
+  "productId": 2001,
+  "title": "示例商品",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": 129.90,
+  "quantity": 1000,
+  "guestToken": null
+}
+
+### ---------- 3f. 异常用例：skuId = null（违反 @NotNull，应 400） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": null,
+  "productId": 2001,
+  "title": "示例商品",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": 129.90,
+  "quantity": 1,
+  "guestToken": null
+}
+
+### ---------- 3g. 异常用例：price = null（违反 @NotNull，应 400） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "skuId": 10001,
+  "productId": 2001,
+  "title": "示例商品",
+  "image": "https://cdn.example.com/p/2001.jpg",
+  "price": null,
+  "quantity": 1,
+  "guestToken": null
+}
+
+### ---------- 3h. 异常用例：空 body {}（skuId/price/quantity 三项缺失，应 400） ----------
+POST {{baseUrl}}/api/cart/items
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{}
+
+### ---------- 4. 改数量（204 无 body） ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity?quantity=5
+Authorization: Bearer {{token}}
+
+### ---------- 4b. 改数量 边界：quantity = 1 ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity?quantity=1
+Authorization: Bearer {{token}}
+
+### ---------- 4c. 改数量 边界：quantity = 999 ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity?quantity=999
+Authorization: Bearer {{token}}
+
+### ---------- 4d. 改数量 异常：quantity = 1000（需类上加 @Validated 才会 400，否则会穿透到 Service） ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity?quantity=1000
+Authorization: Bearer {{token}}
+
+### ---------- 4e. 改数量 异常：漏传 quantity（应 400，int 缺参） ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity
+Authorization: Bearer {{token}}
+
+### ---------- 5. 勾选 ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/selected?selected=true
+Authorization: Bearer {{token}}
+
+### ---------- 5b. 取消勾选 ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/selected?selected=false
+Authorization: Bearer {{token}}
+
+### ---------- 5c. 异常：selected 非布尔（应 400） ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/selected?selected=yes
+Authorization: Bearer {{token}}
+
+### ---------- 6. 全选 ----------
+PATCH {{baseUrl}}/api/cart/select-all?selected=true
+Authorization: Bearer {{token}}
+
+### ---------- 6b. 全不选 ----------
+PATCH {{baseUrl}}/api/cart/select-all?selected=false
+Authorization: Bearer {{token}}
+
+### ---------- 7. 删除单个 ----------
+DELETE {{baseUrl}}/api/cart/items/{{skuId}}
+Authorization: Bearer {{token}}
+
+### ---------- 8. 清空购物车 ----------
+DELETE {{baseUrl}}/api/cart
+Authorization: Bearer {{token}}
+
+### ---------- 9. 登录后合并访客购物车（POST + query 参数） ----------
+POST {{baseUrl}}/api/cart/merge?guestToken={{guestToken}}
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### ---------- 9b. 异常：漏传 guestToken（应 400，@RequestParam 默认 required） ----------
+POST {{baseUrl}}/api/cart/merge
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### ---------- 10. 未登录访问写接口（应 401） ----------
+PATCH {{baseUrl}}/api/cart/items/{{skuId}}/quantity?quantity=1
+Accept: application/json
+
+### ---------- 10b. 未登录清空（应 401） ----------
+DELETE {{baseUrl}}/api/cart
+Accept: application/json

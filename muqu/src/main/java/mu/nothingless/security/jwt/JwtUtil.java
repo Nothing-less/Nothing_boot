@@ -22,6 +22,7 @@ import java.security.PublicKey;
 import java.time.Duration;
 import java.util.Date;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 @Slf4j
@@ -36,6 +37,8 @@ public class JwtUtil {
     private final SecureDigestAlgorithm<?, ?> signatureAlgorithm;
     private final JwtParser jwtParser;
 
+    private static final Set<String> RESERVED = Set.of("sub","exp","iat","nbf","jti","iss","aud", TokenClaims.TYPE);
+
     public JwtUtil(JwtProperties props, TokenStore tokenStore) {
         this.props = props;
         this.tokenStore = tokenStore;
@@ -45,7 +48,7 @@ public class JwtUtil {
         this.signingKey = kp.signing();
         this.verifyingKey = kp.verifying();
 
-        JwtParserBuilder parserBuilder = Jwts.parser();
+        JwtParserBuilder parserBuilder = Jwts.parser().clockSkewSeconds(69);;
         if (verifyingKey instanceof SecretKey sk) {
             parserBuilder.verifyWith(sk);
         } else if (verifyingKey instanceof PublicKey pk) {
@@ -228,7 +231,7 @@ public class JwtUtil {
                 .expiration(expiry);
 
         if (extra != null) {
-            extra.forEach(builder::claim);
+            extra.forEach((k, v) -> { if (!RESERVED.contains(k)) builder.claim(k, v); });
         }
 
         if (signingKey instanceof SecretKey sk) {

@@ -66,9 +66,4 @@ public class TestController {
         );
     }
 
-	@PostConstruct
-    public void logKeyFingerprint() {
-        AesGcmUtil u = SpringContextHolder.getBean(AesGcmUtil.class);
-        log.info("Test decrypt 3: "+u.decryptToString("v1:Z9NR848xdk+aOd8W:h5Lm3SUoSzhn47WEK7KJGj6CNpmDg4Dlk9pK"));
-    }
 }
